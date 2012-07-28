@@ -1,0 +1,7 @@
+if rvm list strings | grep -q "ruby-1.9.3-p0-fast"; then
+  rvm use 1.9.3-fast
+elif rvm list strings | grep -q "ruby-1.9.3"; then
+  rvm use 1.9.3
+else
+  rvm use 1.9.2
+fi
