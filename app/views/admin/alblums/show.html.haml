@@ -1,0 +1,11 @@
+= render 'alblum_list'
+
+.span9.contentcolumn
+  .row-fluid
+    .span12
+      .well
+        .navbar.navbar-heading
+          .navbar-inner
+            .container{:style => "width: auto;"}
+              %a.brand{:href => "#"}= @alblum.name
+

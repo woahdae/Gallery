@@ -1,0 +1,16 @@
+= render 'alblum_list'
+
+.span9.contentcolumn
+  .row-fluid
+    .span12
+      .well
+        .navbar.navbar-heading
+          .navbar-inner
+            .container{:style => "width: auto;"}
+              %a.brand{:href => "#"} New Alblum
+        = simple_form_for [:admin, @alblum] do |f|
+          = f.input :name
+
+          .actions
+            = f.submit 'Create Alblum', :class => 'btn btn_primary'
+

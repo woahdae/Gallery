@@ -10,8 +10,12 @@
  *
  *= require_self
  *= require font-awesome
- *= require_tree .
+ *= require_directory .
  */
 
 @import 'bootstrap';
 @import 'bootstrap-responsive';
+
+#sb-loading {
+  display: none;
+}

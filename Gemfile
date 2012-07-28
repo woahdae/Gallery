@@ -1,9 +1,8 @@
 source 'https://rubygems.org'
 
 gem 'rails', '3.2.7'
-
 gem 'sqlite3'
-
+gem 'jquery-rails'
 
 # Gems used only for assets and not required
 # in production environments by default.
@@ -23,14 +22,20 @@ end
 
 group :development do
   gem 'hpricot' # dep of html2haml
+  gem 'pry'
 end
 
-gem 'jquery-rails'
 
 gem 'haml'
 gem 'haml-rails'
 
 gem 'font-awesome-rails',
-  :git => 'git://github.com/thoughtfulprominence/font-awesome-rails.git'
+  # want the version that works w/ font awesome latest (2.0.3)
+  :git => 'https://github.com/bokmann/font-awesome-rails.git'
 
 gem 'bootstrap-sass'
+
+gem 'devise'
+gem 'cancan'
+
+gem 'simple_form'
