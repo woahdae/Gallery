@@ -21,5 +21,16 @@ group :test, :development do
   gem 'minitest-rails'
 end
 
+group :development do
+  gem 'hpricot' # dep of html2haml
+end
+
 gem 'jquery-rails'
 
+gem 'haml'
+gem 'haml-rails'
+
+gem 'font-awesome-rails',
+  :git => 'git://github.com/thoughtfulprominence/font-awesome-rails.git'
+
+gem 'bootstrap-sass'

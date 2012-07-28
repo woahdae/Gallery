@@ -1,0 +1,44 @@
+%html{:lang => "en"}
+  %head
+    %meta{:charset => "utf-8"}/
+    %title Photographer
+    %meta{:content => "width=device-width, initial-scale=1.0", :name => "viewport"}/
+    %meta{:content => "", :name => "description"}/
+    %meta{:content => "", :name => "author"}/
+
+    / Styles
+    %link{:href => "http://fonts.googleapis.com/css?family=Pacifico",
+      :rel => "stylesheet", :type => "text/css"}/
+
+    = stylesheet_link_tag    "application", :media => "all"
+    = javascript_include_tag "application"
+    = csrf_meta_tags
+
+    / HTML5 shim
+    /[if lt IE 9]
+      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+
+  %body
+
+    .masthead.clearfix
+      .container
+        .logo.pull-left Photographer
+        .socials.pull-right
+          %a{:href => ""}
+            %i.icon-twitter
+          / your twitter link
+          %a{:href => ""}
+            %i.icon-facebook
+          / your facebook link
+          %a{:href => ""}
+            %i.icon-linkedin
+          / your linkedin link
+          %a{:href => ""}
+            %i.icon-pinterest
+          / your pinterest link
+          %a{:href => ""}
+            %i.icon-envelope
+          / your email address
+
+    .container
+      = yield
