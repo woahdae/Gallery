@@ -13,9 +13,9 @@ class Admin::AlblumsController < AdminController
 
   def create
     if @alblum.save
-      render :new
+      redirect_to [:admin, @alblum]
     else
-      redirect_to :index
+      render :action => :new
     end
   end
 
