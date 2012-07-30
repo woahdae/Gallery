@@ -6,4 +6,12 @@ module ApplicationHelper
     end
     safe_join(errors)
   end
+
+  def active_alblum(alblum, options = {})
+    if alblum.try(:new_record?) && action_name == 'new'
+      'active'
+    elsif alblum.try(:id) == options[:current].try(:id)
+      'active'
+    end
+  end
 end

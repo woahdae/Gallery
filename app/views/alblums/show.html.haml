@@ -1,2 +1,9 @@
-%h1 Alblums#show
-%p Find me in app/views/alblums/show.html.haml
+= render 'recent_alblums'
+
+%ul#thumbnails.thumbnails
+  - @alblum.photos.each do |photo|
+    %li.span3
+      = link_to photo.image.url(:large), :class => 'thumbnail' do
+        = image_tag photo.image.url(:large)
+        %span.caption
+          %i.icon-plus-sign

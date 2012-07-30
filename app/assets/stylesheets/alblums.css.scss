@@ -3,3 +3,53 @@
   // hack to get icons centered...
   top: 2px;
 }
+
+.thumbnails li {
+  overflow: hidden;
+  // http://css3gen.com/box-shadow/
+  -webkit-box-shadow: 4px 4px 5px rgba(50, 50, 50, 0.76);
+  -moz-box-shadow:    4px 4px 5px rgba(50, 50, 50, 0.76);
+  box-shadow:         4px 4px 5px rgba(50, 50, 50, 0.76);
+
+  a.thumbnail {
+
+    img {
+      margin: 0 auto;
+      max-width: none;
+      max-height: 100%;
+    }
+
+    margin-bottom: 0px;
+    position: relative;
+    left: -48%;
+
+    /* Landscape phones and down */
+    @media (max-width: 480px) {
+      left: 0;
+    }
+
+    /* Landscape phone to portrait tablet */
+    @media (max-width: 767px) {
+      left: 0;
+    }
+
+    /* Portrait tablet to landscape and desktop */
+    @media (min-width: 768px) and (max-width: 979px) {
+      width: 2 * 166px;
+      height: 249px;
+    }
+
+    @media (min-width: 980px) and (max-width: 1199px) {
+      width: 2 * 220px;
+      height: 330px;
+    }
+
+    /* Large desktop */
+    @media (min-width: 1200px) {
+      width: 2 * 270px;
+      height: 399px;
+    }
+
+  }
+}
+

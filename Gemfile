@@ -32,7 +32,7 @@ gem 'haml-rails'
 gem 'font-awesome-rails',
   # want the version that works w/ font awesome latest (2.0.3)
   :git => 'https://github.com/bokmann/font-awesome-rails.git'
-
+gem 'colorbox-rails'
 gem 'bootstrap-sass'
 
 gem 'devise'
