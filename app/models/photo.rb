@@ -1,12 +1,20 @@
+require Rails.root + 'lib/watermark_processor'
+
 class Photo < ActiveRecord::Base
   belongs_to :alblum, :inverse_of => :photos
   has_one :user, :through => :alblum
 
   attr_accessible :image
-  has_attached_file :image, :styles => {
-    :thumb  => "100x100",
-    :medium => "200x200",
-    :large  => "600x400" }
+  has_attached_file :image,
+    :processors => [:watermark],
+    :styles => {
+      :thumb  => "100x100",
+      :medium => "200x200",
+      :large  => {
+        :geometry           => "600x400",
+        :watermark_path     => Rails.root + 'public/watermark.png',
+        :watermark_position => 'South',
+        :watermark_offset   => {x: 0, y: 50} } }
 
   validates :image, :attachment_presence => true
 
