@@ -22,7 +22,8 @@
 
     .masthead.clearfix
       .container
-        .logo.pull-left Photographer
+        .logo.pull-left
+          = link_to image_tag('logo.png'), root_path
         .socials.pull-right
           %a{:href  => "https://www.facebook.com/katie.houck",
             :target => '_blank'}

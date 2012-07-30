@@ -37,12 +37,18 @@ h1, h2, h3, h4, h5, h6 {
 	font-weight: 200;
 	font-family: "Pacifico";
 	text-shadow: 0px 1px 1px #000;
+
+  margin: 10px 0;
 }
 
 .logo span {
 	font-weight: 400;
 	color: #AAA;
 	font-size: 18px;
+}
+
+.logo img {
+  height: 40px;
 }
 
 .masthead {
