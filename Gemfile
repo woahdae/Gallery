@@ -1,7 +1,7 @@
 source 'https://rubygems.org'
 
 gem 'rails', '3.2.7'
-gem 'sqlite3'
+gem 'activerecord-postgresql-adapter'
 gem 'jquery-rails'
 
 # Gems used only for assets and not required
@@ -39,3 +39,6 @@ gem 'devise'
 gem 'cancan'
 
 gem 'simple_form'
+
+gem 'paperclip'
+gem 'jquery-fileupload-rails'

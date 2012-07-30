@@ -3,7 +3,11 @@ Gallery::Application.routes.draw do
 
   namespace :admin do
     root :to => 'alblums#index'
-    resources :alblums
+    resources :alblums do
+      collection do
+        delete :delete_photo
+      end
+    end
   end
 
   resources :alblums, :only => [:index, :show]

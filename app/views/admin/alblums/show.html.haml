@@ -9,3 +9,8 @@
             .container{:style => "width: auto;"}
               %a.brand{:href => "#"}= @alblum.name
 
+        = simple_form_for [:admin, @alblum],
+          :html => {:multipart => true, :id => 'fileupload'} do |f|
+
+          = render :partial => 'fileupload', :locals => {:f => f}
+

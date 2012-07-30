@@ -21,3 +21,4 @@ config/settings.yml.local
 .svn
 app/assets/images/icons-*.png
 coverage
+public/system
