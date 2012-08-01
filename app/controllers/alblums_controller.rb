@@ -3,6 +3,8 @@ class AlblumsController < ApplicationController
   load_and_authorize_resource
   skip_load_and_authorize_resource :only => :index
 
+  before_filter :load_cart
+
   def show
   end
 
@@ -16,4 +18,7 @@ class AlblumsController < ApplicationController
                         order('id ASC').limit(5)
   end
 
+  def load_cart
+    @cart = Cart.find_by_session_id(request.session_options[:id])
+  end
 end

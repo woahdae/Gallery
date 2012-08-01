@@ -9,12 +9,16 @@ class Photo < ActiveRecord::Base
     :processors => [:watermark],
     :styles => {
       :thumb  => "100x100>",
-      :medium => "270x405>",
-      :large  => {
+      :medium  => {
         :geometry           => "600x400>",
         :watermark_path     => Rails.root + 'public/watermark.png',
         :watermark_position => 'South',
-        :watermark_offset   => {x: 0, y: 50} } }
+        :watermark_offset   => {x: 0, y: 50} },
+      :large  => {
+        :geometry           => "800x600>",
+        :watermark_path     => Rails.root + 'public/watermark.png',
+        :watermark_position => 'South',
+        :watermark_offset   => {x: 0, y: 100} } }
 
   validates :image, :attachment_presence => true
 

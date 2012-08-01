@@ -12,6 +12,7 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= require jquery.color
 //= require bootstrap
 //= require colorbox-rails
 //= require_tree .

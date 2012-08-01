@@ -4,6 +4,8 @@
   - @alblum.photos.each do |photo|
     %li.span3
       = link_to photo.image.url(:large), :class => 'thumbnail' do
-        = image_tag photo.image.url(:large)
+        = image_tag photo.image.url(:medium)
+
         %span.caption
-          %i.icon-plus-sign
+          %i.zoom.icon-zoom-in
+          %i.cart.icon-shopping-cart{'data-photo-id' => photo.id}

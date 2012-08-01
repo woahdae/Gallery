@@ -1,0 +1,12 @@
+- if @cart.photos.empty?
+  .well
+    There are no photos in your cart.
+    = link_to 'Browse Photos', root_path
+
+- @cart.photos.each do |photo|
+  .row
+    .span3
+      = image_tag photo.image.url(:thumb)
+    .span3
+      = link_to 'Remove', remove_cart_url(:photo_id => photo.id),
+        :method => :delete
