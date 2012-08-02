@@ -9,6 +9,7 @@ class AlblumsController < ApplicationController
   end
 
   def index
+    redirect_to @recent_alblums.first
   end
 
   private

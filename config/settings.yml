@@ -1,0 +1,19 @@
+defaults:
+  domain: 'khouck.com'
+  contact_email: 'katie@khouck.com'
+  paypal:
+    email:     'seller_1343845258_biz@gmail.com'
+    password:  '343847027'
+    live:      false
+
+development:
+  foo: bar
+
+test:
+  foo: bar
+
+production:
+  paypal:
+    email:     'katie@khouck.com'
+    password:  ''
+    live: true

@@ -8,7 +8,7 @@ class Photo < ActiveRecord::Base
   has_attached_file :image,
     :processors => [:watermark],
     :styles => {
-      :thumb  => "100x100>",
+      :thumb  => "250x250>",
       :medium  => {
         :geometry           => "600x400>",
         :watermark_path     => Rails.root + 'public/watermark.png',

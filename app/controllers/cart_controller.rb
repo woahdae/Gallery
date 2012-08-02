@@ -13,6 +13,9 @@ class CartController < ApplicationController
     end
   end
 
+  def show
+  end
+
   private
 
   def load_cart

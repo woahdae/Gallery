@@ -1,4 +1,6 @@
 $(function() {
+  if (!$('body').hasClass('alblums')) return;
+
   $('a.thumbnail').colorbox({rel: 'thumbnail'});
 
   $('i.cart').on('click', function(e) {

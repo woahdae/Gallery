@@ -3,10 +3,37 @@
     There are no photos in your cart.
     = link_to 'Browse Photos', root_path
 
-- @cart.photos.each do |photo|
-  .row
-    .span3
-      = image_tag photo.image.url(:thumb)
-    .span3
-      = link_to 'Remove', remove_cart_url(:photo_id => photo.id),
-        :method => :delete
+- else
+
+  .well
+    .row
+      %fieldset.span6
+        %label Photos
+        %ul.thumbnails
+          - @cart.photos.each do |photo|
+            %li.span2
+              .thumbnail
+                = link_to photo.image.url(:large), :class => 'thumb' do
+                  = image_tag photo.image.url(:thumb)
+                .caption
+                  = link_to 'Remove', remove_cart_url(:photo_id => photo.id),
+                    :method => :delete
+
+      %fieldset.span5.download
+        %label Download
+
+        %ul
+          %li After purchasing, items will be available as a digital download.
+          %li
+            I do prints also, but for now you'll need to
+            = link_to 'contact me', 'mailto:katie@khouck.com'
+            to order those.
+          %li
+            Note: you do not need a PayPal account to check out. Look for
+            the 'pay as a guest' link if you do not wish to create one.
+
+        = link_to PaypalPayment.new(@cart).checkout_url, :class => 'paypal' do
+          <img src="https://www.paypal.com/en_US/i/btn/btn_xpressCheckout.gif"
+          align="right" style="margin-right:7px;">
+
+    .clearfix

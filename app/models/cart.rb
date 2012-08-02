@@ -16,4 +16,13 @@ class Cart < ActiveRecord::Base
   def remove(photo_id)
     line_items.delete(LineItem.find_by_photo_id(photo_id))
   end
+
+  before_create :generate_uuid
+
+  private
+
+  def generate_uuid
+    # http://stackoverflow.com/questions/1117584/guids-in-ruby
+    self.uuid = (0..16).to_a.map{|a| rand(16).to_s(16)}.join
+  end
 end

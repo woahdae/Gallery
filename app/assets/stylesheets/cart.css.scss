@@ -1,3 +1,24 @@
-// Place all the styles related to the cart controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+body.cart {
+
+  .thumbnail .caption .form {
+    margin-bottom: 0;
+  }
+
+  fieldset {
+    label {
+      font-family: "Pacifico";
+      font-size: 18px;
+    }
+  }
+
+  fieldset.download {
+    li {
+      margin-top: 10px
+    }
+  }
+
+  a.paypal img {
+    margin-top: 20px;
+  }
+
+}

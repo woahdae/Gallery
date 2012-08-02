@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120730181017) do
+ActiveRecord::Schema.define(:version => 20120801175701) do
 
   create_table "alblums", :force => true do |t|
     t.string   "name"
@@ -26,9 +26,11 @@ ActiveRecord::Schema.define(:version => 20120730181017) do
     t.string   "session_id"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
+    t.string   "uuid"
   end
 
   add_index "carts", ["session_id"], :name => "index_carts_on_session_id"
+  add_index "carts", ["uuid"], :name => "index_carts_on_uuid"
 
   create_table "line_items", :force => true do |t|
     t.integer  "cart_id"
