@@ -26,12 +26,12 @@ class Photo < ActiveRecord::Base
         :geometry           => "600x400>",
         :watermark_path     => Rails.root + 'public/watermark.png',
         :watermark_position => 'South',
-        :watermark_offset   => {x: 0, y: 50} },
+        :watermark_offset   => {x: 0, y: 100} },
       :large  => {
         :geometry           => "800x600>",
         :watermark_path     => Rails.root + 'public/watermark.png',
         :watermark_position => 'South',
-        :watermark_offset   => {x: 0, y: 100} },
+        :watermark_offset   => {x: 0, y: 200} },
       :purchase_small  => '640x480>',
       :purchase_medium => '640x480>',
       :purchase_large  => '640x480>' }
