@@ -1,10 +1,14 @@
 defaults:
+  s3:
+    access_key_id: AKIAILRF4EOSNYCDBE5A
+    secret_access_key: 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
+    bucket: 'gallery98103-dev'
   domain: 'khouck.com'
   contact_email: 'katie@khouck.com'
   paypal:
-    email:     'seller_1343845258_biz@gmail.com'
-    password:  '343847027'
-    live:      false
+    email:    'seller_1343845258_biz@gmail.com'
+    password: '343847027'
+    live:     false
 
 development:
   foo: bar
@@ -14,6 +18,8 @@ test:
 
 production:
   paypal:
-    email:     'katie@khouck.com'
-    password:  ''
-    live: true
+    email:    'katie@khouck.com'
+    password: ''
+    live:     true
+  s3:
+    bucket: 'gallery98103'

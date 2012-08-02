@@ -7,6 +7,19 @@ class Photo < ActiveRecord::Base
   attr_accessible :image
   has_attached_file :image,
     :processors => [:watermark],
+    :storage    => :s3,
+    :s3_permissions => {
+      :original        => :private,
+      :thumb           => :public_read,
+      :medium          => :public_read,
+      :large           => :public_read,
+      :purchase_small  => :private,
+      :purchase_medium => :private,
+      :purchase_large  => :private },
+    :s3_credentials => {
+      :access_key_id     => Gallery.settings.s3.access_key_id,
+      :secret_access_key => Gallery.settings.s3.secret_access_key },
+    :bucket => Gallery.settings.s3.bucket,
     :styles => {
       :thumb  => "250x250>",
       :medium  => {
@@ -18,7 +31,10 @@ class Photo < ActiveRecord::Base
         :geometry           => "800x600>",
         :watermark_path     => Rails.root + 'public/watermark.png',
         :watermark_position => 'South',
-        :watermark_offset   => {x: 0, y: 100} } }
+        :watermark_offset   => {x: 0, y: 100} },
+      :purchase_small  => '640x480>',
+      :purchase_medium => '640x480>',
+      :purchase_large  => '640x480>' }
 
   validates :image, :attachment_presence => true
 

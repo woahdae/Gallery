@@ -28,6 +28,7 @@ end
 
 gem 'haml'
 gem 'haml-rails'
+gem 'ruby_parser' # requirement of html2haml
 
 gem 'font-awesome-rails',
   # want the version that works w/ font awesome latest (2.0.3)
@@ -42,3 +43,4 @@ gem 'simple_form'
 
 gem 'paperclip'
 gem 'jquery-fileupload-rails'
+gem 'aws-sdk'
