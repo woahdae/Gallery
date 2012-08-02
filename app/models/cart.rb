@@ -5,10 +5,10 @@ class Cart < ActiveRecord::Base
 
   has_many :photos, :through => :line_items
 
-  def add(photo_id)
+  def add(photo_id, options)
     return if line_items.find_by_photo_id(photo_id)
 
-    line_items.build.tap do |li|
+    line_items.build(options).tap do |li|
       li.photo_id = photo_id
     end.save!
   end

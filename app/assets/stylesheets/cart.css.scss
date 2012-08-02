@@ -1,9 +1,5 @@
 body.cart {
 
-  .thumbnail .caption .form {
-    margin-bottom: 0;
-  }
-
   fieldset {
     label {
       font-family: "Pacifico";
@@ -17,8 +13,27 @@ body.cart {
     }
   }
 
+  a.delete {
+    position: relative;
+    left: 10px;
+    i {
+      text-decoration: none;
+      color: #AAA;
+      &:hover {
+        color: #E67F6C;
+      }
+    }
+  }
+
   a.paypal img {
     margin-top: 20px;
+  }
+
+  .thumbnail {
+    // http://css3gen.com/box-shadow/
+    -webkit-box-shadow: 4px 4px 5px rgba(50, 50, 50, 0.76);
+    -moz-box-shadow:    4px 4px 5px rgba(50, 50, 50, 0.76);
+    box-shadow:         4px 4px 5px rgba(50, 50, 50, 0.76);
   }
 
 }

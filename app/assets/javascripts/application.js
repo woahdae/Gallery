@@ -15,4 +15,8 @@
 //= require jquery.color
 //= require bootstrap
 //= require colorbox-rails
-//= require_tree .
+//= require_directory .
+
+$(function() {
+  $('[rel*=tooltip]').tooltip();
+})

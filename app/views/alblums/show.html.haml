@@ -2,10 +2,23 @@
 
 %ul#thumbnails.thumbnails
   - @alblum.photos.each do |photo|
-    %li.span3
-      = link_to photo.image.url(:large), :class => 'thumbnail' do
+    %li.span3.thumbnail
+      = link_to photo.image.url(:large), :class => 'photo-link' do
         = image_tag photo.image.url(:medium)
 
-        %span.caption
-          %i.zoom.icon-zoom-in
-          %i.cart.icon-shopping-cart{'data-photo-id' => photo.id}
+      .caption
+        %i.zoom.icon-zoom-in
+
+        %fieldset.download
+          %label Download
+
+          .buttons.span3
+            = button_to "S", add_cart_url(photo_id: photo.id, size: 'small'),
+              :form => {:class => 'span'}, :class => 'btn span1',
+              :method => :post, :remote => true
+
+            = button_to "M", add_cart_url(photo_id: photo.id, size: 'medium'),
+              :class => 'btn span1', :method => :post, :remote => true
+
+            = button_to "L", add_cart_url(photo_id: photo.id, size: 'large'),
+              :class => 'btn span1', :method => :post, :remote => true

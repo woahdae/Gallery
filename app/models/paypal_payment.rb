@@ -1,8 +1,9 @@
 class PaypalPayment
-  attr_reader :cart
+  attr_reader :cart, :options_attrs
 
-  def initialize(cart)
+  def initialize(cart, options = {})
     @cart = cart
+    @options_attrs = options[:options_attrs] || []
   end
 
   def checkout_params
@@ -22,6 +23,13 @@ class PaypalPayment
         "item_number_#{index}" => item.photo.id,
         "quantity_#{index}"    => item.qty
       })
+
+      options_attrs.each_with_index do |attr, option_index|
+        values.merge!({
+          "on#{option_index}_#{index}" => attr.to_s,
+          "os#{option_index}_#{index}" => item.send(attr),
+        })
+      end
     end
 
     values

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120801175701) do
+ActiveRecord::Schema.define(:version => 20120802180817) do
 
   create_table "alblums", :force => true do |t|
     t.string   "name"
@@ -37,6 +37,7 @@ ActiveRecord::Schema.define(:version => 20120801175701) do
     t.integer  "photo_id"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
+    t.string   "size"
   end
 
   add_index "line_items", ["cart_id"], :name => "index_line_items_on_cart_id"

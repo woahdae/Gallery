@@ -10,14 +10,17 @@
       %fieldset.span6
         %label Photos
         %ul.thumbnails
-          - @cart.photos.each do |photo|
+          - @cart.line_items.each do |li|
             %li.span2
               .thumbnail
-                = link_to photo.image.url(:large), :class => 'thumb' do
-                  = image_tag photo.image.url(:thumb)
+                = link_to li.photo.image.url(:large), :class => 'thumb' do
+                  = image_tag li.photo.image.url(:thumb)
                 .caption
-                  = link_to 'Remove', remove_cart_url(:photo_id => photo.id),
-                    :method => :delete
+                  Size: #{li.size}
+                  = link_to remove_cart_url(:photo_id => li.photo.id),
+                    method: :delete, rel: 'tooltip', class: "delete pull-right",
+                    title: 'Remove from cart' do
+                    %i.icon-remove-sign.icon-large
 
       %fieldset.span5.download
         %label Download
@@ -32,7 +35,9 @@
             Note: you do not need a PayPal account to check out. Look for
             the 'pay as a guest' link if you do not wish to create one.
 
-        = link_to PaypalPayment.new(@cart).checkout_url, :class => 'paypal' do
+        = link_to PaypalPayment.new(@cart,
+          :options_attrs => [:size]).checkout_url, :class => 'paypal' do
+
           <img src="https://www.paypal.com/en_US/i/btn/btn_xpressCheckout.gif"
           align="right" style="margin-right:7px;">
 

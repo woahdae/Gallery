@@ -17,8 +17,10 @@
 @import 'bootstrap';
 @import 'bootstrap-responsive';
 
-#sb-loading {
-  display: none;
+.socials i {
+  position: relative;
+  // hack to get icons centered...
+  top: 2px;
 }
 
 #cart {
