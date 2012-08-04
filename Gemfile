@@ -38,7 +38,6 @@ group :development do
   gem 'ruby_parser' # dep of html2haml
 end
 
-
 gem 'haml'
 gem 'haml-rails'
 

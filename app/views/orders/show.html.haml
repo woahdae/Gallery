@@ -2,6 +2,8 @@
   %p= @order.uuid
   %p= @order.total
 
+  %p= link_to 'Download', download_order_path(@order)
+
   %ul.thumbnails
     - @order.line_items.each do |li|
       %li.thumbnail

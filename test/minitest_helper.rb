@@ -22,9 +22,6 @@ end
 ActiveRecord::Schema.verbose = false
 require Rails.root + 'db/schema.rb'
 
-DatabaseCleaner.strategy = :transaction
-DatabaseCleaner.clean_with(:truncation)
-
 class MiniTest::Spec
   before do
     if vcr = metadata[:vcr]
@@ -39,14 +36,13 @@ class MiniTest::Spec
       VCR.insert_cassette cassette, options
     end
 
-    DatabaseCleaner.start
+    DatabaseCleaner.clean_with(:truncation)
   end
 
   after do
     if metadata[:vcr]
       VCR.eject_cassette
     end
-    DatabaseCleaner.clean
   end
 end
 

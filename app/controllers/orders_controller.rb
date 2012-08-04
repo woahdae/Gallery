@@ -10,6 +10,10 @@ class OrdersController < ApplicationController
     redirect_to @orders.first
   end
 
+  def download
+    send_file @order.to_zip, type: "application/zip"
+  end
+
   private
 
   def load_orders
