@@ -1,2 +1,2 @@
-Factory.build(:cart) do
+Factory.define(:cart) do
 end

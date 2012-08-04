@@ -35,8 +35,8 @@
             Note: you do not need a PayPal account to check out. Look for
             the 'pay as a guest' link if you do not wish to create one.
 
-        = link_to PaypalPayment.new(@cart,
-          :options_attrs => [:size]).checkout_url, :class => 'paypal' do
+        = link_to PaypalPayment.new(@cart, with: :size).checkout_url,
+          id: 'paypal-checkout' do
 
           <img src="https://www.paypal.com/en_US/i/btn/btn_xpressCheckout.gif"
           align="right" style="margin-right:7px;">

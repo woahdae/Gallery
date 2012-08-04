@@ -24,6 +24,8 @@ group :test do
   gem 'minitest-rails'
   gem 'minitest-capybara'
   gem 'minitest-metadata'
+  gem 'minitest-matchers'
+  gem 'turn'
   gem 'sqlite3'
   gem 'vcr'
   gem 'webmock'

@@ -14,7 +14,7 @@ Gallery::Application.routes.draw do
     end
   end
 
-  resources :orders, :only => [:show]
+  resources :orders, :only => [:index, :show]
 
   namespace :admin do
     root :to => 'alblums#index'

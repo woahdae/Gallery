@@ -1,9 +1,9 @@
 class PaypalPayment
-  attr_reader :cart, :options_attrs
+  attr_reader :cart, :with
 
   def initialize(cart, options = {})
     @cart = cart
-    @options_attrs = options[:options_attrs] || []
+    @with = options[:with] || []
   end
 
   def checkout_params
@@ -24,7 +24,7 @@ class PaypalPayment
         "quantity_#{index}"    => item.qty
       })
 
-      options_attrs.each_with_index do |attr, option_index|
+      Array(with).each_with_index do |attr, option_index|
         values.merge!({
           "on#{option_index}_#{index}" => attr.to_s,
           "os#{option_index}_#{index}" => item.send(attr),
@@ -36,14 +36,6 @@ class PaypalPayment
   end
 
   def checkout_url
-    endpoint + checkout_params.to_param
-  end
-
-  def endpoint
-    if Gallery.settings.paypal.live
-      "https://www.sandbox.paypal.com/cgi-bin/webscr?"
-    else
-      "https://www.sandbox.paypal.com/cgi-bin/webscr?"
-    end
+    Gallery.settings.paypal.endpoint + '?' + checkout_params.to_param
   end
 end

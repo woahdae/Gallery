@@ -31,6 +31,10 @@
           / your facebook link
           %a{:href => "mailto:katie.houck@yahoo.com"}
             %i.icon-envelope
+        #login.pull-right
+          - if current_user
+            Logged in as <br />
+            = link_to current_user.display_name, current_user
         = render 'cart/cart'
 
     .container

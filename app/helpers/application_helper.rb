@@ -14,4 +14,12 @@ module ApplicationHelper
       'active'
     end
   end
+
+  def user_path(user)
+    if user.admin?
+      admin_alblums_path
+    else
+      orders_path
+    end
+  end
 end

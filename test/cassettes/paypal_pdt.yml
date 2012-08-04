@@ -2,17 +2,17 @@
 http_interactions:
 - request:
     method: post
-    uri: https://www.paypal.com/cgi-bin/webscr
+    uri: https://www.sandbox.paypal.com/cgi-bin/webscr
     body:
       encoding: US-ASCII
-      string: cmd=_notify-synch&tx=4RU29511G17214419&at=auqBVoSfcLsWiLp6C_WVYPzqZ8587uje3agL1NVtjJq-Xlmlz8SvyQ0KOx&submit=PDT
+      string: cmd=_notify-synch&tx=4RU29511G17214419&at=auqBVoSfcLsWiLp6C_WVYPzqZ8587uje3agL1NVtjJq-Xlmlz8SvyQ0KOx8&commit=PDT
     headers:
       Accept:
       - ! '*/*; q=0.5, application/xml'
       Accept-Encoding:
       - gzip, deflate
       Content-Length:
-      - '111'
+      - '112'
       Content-Type:
       - application/x-www-form-urlencoded
       User-Agent:
@@ -23,38 +23,161 @@ http_interactions:
       message: OK
     headers:
       Date:
-      - Fri, 03 Aug 2012 19:14:26 GMT
+      - Sat, 04 Aug 2012 05:31:55 GMT
       Server:
       - Apache
       X-Frame-Options:
       - SAMEORIGIN
       Set-Cookie:
-      - cookie_check=yes; expires=Mon, 01-Aug-2022 19:14:26 GMT; domain=.paypal.com;
-        path=/; HttpsOnly
-      - cwrClyrK4LoCV1fydGbAxiNL6iG=dsJ_PqSMCo-wtAAfhoJdm2195njAv_h3Amsi4izYvmESy9W0-KexHrWY00kEm_k1F3gW-AqK8JeM_18WoqBZZ7Nw-3Hsgypcp9cnHqyI5yDFdE-FTBeKRfSOKu0%7c8usn3Ibbxpa_-WkfkOew8yRrLw5lU4sTBtoGX-mD8xhndPF-QF95kETlWLLeqYyURiBSeG%7c_FZU5A_1lJpUUMq0URN07mgQeNA7jC_hd7odKwmMd47Im14EhxXILQdBlawLOLZmNLx-Am%7c1344021266;
-        domain=.paypal.com; path=/; HttpsOnly
-      - navcmd=_notify-synch; domain=.paypal.com; path=/; HttpsOnly
-      - navlns=0.0; expires=Thu, 29-Jul-2032 19:14:26 GMT; domain=.paypal.com; path=/;
-        HttpsOnly
-      Vary:
-      - Accept-Encoding
-      Content-Encoding:
-      - text
+      - -1ILhdyICORs4hS4xTUr41S8iP0=1LGfXMlb94L95sUq2TqwmsNFzOQT1iSmzN89b6vnWsA0o1NyCJmUZC5XVk35tl29l1wzkoBoqCOBgMj6;
+        expires=Fri, 30-Jul-2032 05:31:57 GMT; domain=.paypal.com; path=/; Secure;
+        HttpOnly
+      - Apache=10.72.109.11.1344058315885574; path=/; expires=Mon, 28-Jul-42 05:31:55
+        GMT
+      - c9MWDuvPtT9GIMyPc3jwol1VSlO=LrdHD4T9FySKhPi7qe9WBr6MbnWKIeUt3BB389s6LRgk7npGjM7HJkXQ3tngRN-Tkv7voiWvcxIFPjz8OjgvaIAENtv4Ri0Gpe-VB11l6IVUpJNp-lVBMb9zHl6qvCbgoGy3Om%7cWuKRNDndFgrk4ggY9BHkDH1Qm6uW60lscNZ-osMHd4JCZOmY34zno0yH8Hfk9HEJo1Sidm%7c8bkaNTNOZQPYglyohUs3VSDYqlLzi04StQDM0qS8ejXrqAwRsN7kqLHbZz-A4IfdAHU_Wm%7c1344058317;
+        domain=.paypal.com; path=/; Secure; HttpOnly
+      - cookie_check=yes; expires=Tue, 02-Aug-2022 05:31:57 GMT; domain=.paypal.com;
+        path=/; Secure; HttpOnly
+      - navcmd=_notify-synch; domain=.paypal.com; path=/; Secure; HttpOnly
+      - navlns=0.0; expires=Fri, 30-Jul-2032 05:31:57 GMT; domain=.paypal.com; path=/;
+        Secure; HttpOnly
+      X-Cnection:
+      - close
       Transfer-Encoding:
       - chunked
       Content-Type:
       - text/html; charset=UTF-8
     body:
-      string: |
-        SUCCESS
-        first_name=Jane+Doe
-        last_name=Smith
+      encoding: US-ASCII
+      string: ! 'SUCCESS
+
+        mc_gross=30.00
+
+        invoice=d21d994a0c0cff803
+
+        protection_eligibility=Eligible
+
+        address_status=confirmed
+
+        item_number1=12
+
+        tax=0.00
+
+        item_number2=10
+
+        payer_id=QX3T5ZGYFHUPL
+
+        item_number3=9
+
+        address_street=1+Main+St
+
+        payment_date=10%3A34%3A28+Aug+03%2C+2012+PDT
+
+        option_selection1_1=medium
+
         payment_status=Completed
-        payer_email=janedoesmith%40hotmail.com
-        payment_gross=3.99
+
+        option_selection1_2=small
+
+        option_selection1_3=large
+
+        charset=windows-1252
+
+        address_zip=95131
+
+        mc_shipping=0.00
+
+        mc_handling=0.00
+
+        first_name=John
+
+        mc_fee=1.17
+
+        address_country_code=US
+
+        address_name=John+Smith
+
+        custom=
+
+        payer_status=verified
+
+        business=seller_1343845258_biz%40gmail.com
+
+        address_country=United+States
+
+        num_cart_items=3
+
+        mc_handling1=0.00
+
+        mc_handling2=0.00
+
+        mc_handling3=0.00
+
+        address_city=San+Jose
+
+        payer_email=buyer_1343845372_per%40gmail.com
+
+        mc_shipping1=0.00
+
+        mc_shipping2=0.00
+
+        mc_shipping3=0.00
+
+        tax1=0.00
+
+        tax2=0.00
+
+        tax3=0.00
+
+        option_name1_1=size
+
+        option_name1_2=size
+
+        option_name1_3=size
+
+        txn_id=4RU29511G17214419
+
+        payment_type=instant
+
+        last_name=Smith
+
+        address_state=CA
+
+        item_name1=DSC_0468.JPG
+
+        receiver_email=seller_1343845258_biz%40gmail.com
+
+        item_name2=DSC_0427.JPG
+
+        payment_fee=1.17
+
+        item_name3=DSC_0223.JPG
+
+        quantity1=1
+
+        quantity2=1
+
+        receiver_id=DVWZ9M8AAZXNG
+
+        quantity3=1
+
+        txn_type=cart
+
+        mc_gross_1=10.00
+
         mc_currency=USD
-        txn_id=5555555
-        custom=For+the+purchase+of+the+rare+book+Green+Eggs+%26+Ham
+
+        mc_gross_2=5.00
+
+        mc_gross_3=15.00
+
+        residence_country=US
+
+        transaction_subject=Shopping+CartDSC_0468.JPGDSC_0427.JPGDSC_0223.JPG
+
+        payment_gross=30.00
+
+'
     http_version: 
-  recorded_at: Fri, 03 Aug 2012 19:14:27 GMT
+  recorded_at: Sat, 04 Aug 2012 05:31:56 GMT
 recorded_with: VCR 2.2.4

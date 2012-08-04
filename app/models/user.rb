@@ -11,6 +11,8 @@ class User < ActiveRecord::Base
   has_many :alblums, :inverse_of => :user
   has_many :orders, :inverse_of => :user
 
+  validates :email, :format => /@/
+
   def display_name
     email.split('@').first
   end

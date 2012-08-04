@@ -7,6 +7,49 @@ require 'minitest/spec'
 
 Dir.glob(Rails.root + 'test/support/*.rb').each {|f| require f}
 
+Turn.config do |c|
+  c.format = :outline
+  c.natural = true
+end
+
+VCR.configure do |c|
+  c.cassette_library_dir = 'test/cassettes'
+  c.hook_into :webmock
+end
+
+# comment/uncomment while deciding on whether or not to use
+# in-memory sqlite3 (see also database.yml; need this for ':memory:')
+ActiveRecord::Schema.verbose = false
+require Rails.root + 'db/schema.rb'
+
+DatabaseCleaner.strategy = :transaction
+DatabaseCleaner.clean_with(:truncation)
+
+class MiniTest::Spec
+  before do
+    if vcr = metadata[:vcr]
+      if vcr.is_a?(Hash)
+        cassette = vcr.keys.first
+        options  = vcr.values.first
+      else
+        cassette = vcr
+        options  = {}
+      end
+
+      VCR.insert_cassette cassette, options
+    end
+
+    DatabaseCleaner.start
+  end
+
+  after do
+    if metadata[:vcr]
+      VCR.eject_cassette
+    end
+    DatabaseCleaner.clean
+  end
+end
+
 # Uncomment if you want Capybara in accceptance/integration tests
 #require "minitest/rails/capybara"
 

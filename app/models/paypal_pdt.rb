@@ -15,13 +15,18 @@ class PaypalPdt
       'commit' => 'PDT'
     }
 
-    resp = RestClient.post(
-      Gallery.settings.paypal.pdt_postback_url, postback_params).
+    resp = RestClient.post(Gallery.settings.paypal.endpoint, postback_params).
       split("\n").map(&:strip)
 
     # see body of test/cassettes/paypal_pdt.yml for example response
     status = resp.shift
-    params = resp.inject({}) {|acc, e| e = e.split('='); acc[e[0]] = e[1]; acc}
+    params = resp.inject({}) do |acc, e|
+      next if e.blank? # sandbox likes to double-space responses...
+
+      e = e.split('=')
+      acc[e[0]] = URI.decode(e[1] || '')
+      acc
+    end
 
     if status == 'SUCCESS'
       params
