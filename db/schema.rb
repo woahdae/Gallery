@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120802180817) do
+ActiveRecord::Schema.define(:version => 20120803202851) do
 
   create_table "alblums", :force => true do |t|
     t.string   "name"
@@ -38,10 +38,29 @@ ActiveRecord::Schema.define(:version => 20120802180817) do
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
     t.string   "size"
+    t.integer  "order_id"
   end
 
   add_index "line_items", ["cart_id"], :name => "index_line_items_on_cart_id"
+  add_index "line_items", ["order_id"], :name => "index_line_items_on_order_id"
   add_index "line_items", ["photo_id"], :name => "index_line_items_on_photo_id"
+
+  create_table "orders", :force => true do |t|
+    t.string   "uuid"
+    t.integer  "user_id"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  add_index "orders", ["user_id"], :name => "index_orders_on_user_id"
+  add_index "orders", ["uuid"], :name => "index_orders_on_uuid"
+
+  create_table "paypal_receipts", :force => true do |t|
+    t.text     "params"
+    t.string   "uuid"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
 
   create_table "photos", :force => true do |t|
     t.integer  "alblum_id"

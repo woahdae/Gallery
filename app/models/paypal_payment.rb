@@ -9,10 +9,10 @@ class PaypalPayment
   def checkout_params
     values = {
       :business => Gallery.settings.paypal.email,
-      :cmd => "_cart",
-      :upload => 1,
-      :return => "http://#{Gallery.settings.domain}/paypal_standard",
-      :invoice => cart.uuid
+      :cmd      => "_cart",
+      :upload   => 1,
+      :return   => "http://#{Gallery.settings.domain}/paypal_notifications/pdt",
+      :invoice  => cart.uuid
     }
 
     cart.line_items.each_with_index do |item, index|

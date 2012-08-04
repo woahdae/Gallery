@@ -1,4 +1,6 @@
 Gallery::Application.routes.draw do
+  get 'paypal_notifications/pdt'
+
   devise_for :users
 
   root :to => 'alblums#index'
@@ -11,6 +13,8 @@ Gallery::Application.routes.draw do
       delete :remove
     end
   end
+
+  resources :orders, :only => [:show]
 
   namespace :admin do
     root :to => 'alblums#index'

@@ -1,7 +1,6 @@
 class Cart < ActiveRecord::Base
   has_many :line_items,
-    :inverse_of => :cart,
-    :dependent => :destroy
+    :inverse_of => :cart
 
   has_many :photos, :through => :line_items
 
@@ -18,6 +17,10 @@ class Cart < ActiveRecord::Base
   end
 
   before_create :generate_uuid
+
+  def total
+    line_items.to_a.sum(&:unit_price)
+  end
 
   private
 

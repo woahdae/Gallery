@@ -1,0 +1,10 @@
+.well
+  %p= @order.uuid
+  %p= @order.total
+
+  %ul.thumbnails
+    - @order.line_items.each do |li|
+      %li.thumbnail
+        = image_tag li.photo.image.url
+        .caption
+          Size: #{li.size}

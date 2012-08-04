@@ -9,7 +9,11 @@ class AlblumsController < ApplicationController
   end
 
   def index
-    redirect_to @recent_alblums.first
+    if @recent_alblums.any?
+      redirect_to @recent_alblums.first
+    else
+      render
+    end
   end
 
   private

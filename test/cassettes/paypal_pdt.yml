@@ -1,0 +1,60 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://www.paypal.com/cgi-bin/webscr
+    body:
+      encoding: US-ASCII
+      string: cmd=_notify-synch&tx=4RU29511G17214419&at=auqBVoSfcLsWiLp6C_WVYPzqZ8587uje3agL1NVtjJq-Xlmlz8SvyQ0KOx&submit=PDT
+    headers:
+      Accept:
+      - ! '*/*; q=0.5, application/xml'
+      Accept-Encoding:
+      - gzip, deflate
+      Content-Length:
+      - '111'
+      Content-Type:
+      - application/x-www-form-urlencoded
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Fri, 03 Aug 2012 19:14:26 GMT
+      Server:
+      - Apache
+      X-Frame-Options:
+      - SAMEORIGIN
+      Set-Cookie:
+      - cookie_check=yes; expires=Mon, 01-Aug-2022 19:14:26 GMT; domain=.paypal.com;
+        path=/; HttpsOnly
+      - cwrClyrK4LoCV1fydGbAxiNL6iG=dsJ_PqSMCo-wtAAfhoJdm2195njAv_h3Amsi4izYvmESy9W0-KexHrWY00kEm_k1F3gW-AqK8JeM_18WoqBZZ7Nw-3Hsgypcp9cnHqyI5yDFdE-FTBeKRfSOKu0%7c8usn3Ibbxpa_-WkfkOew8yRrLw5lU4sTBtoGX-mD8xhndPF-QF95kETlWLLeqYyURiBSeG%7c_FZU5A_1lJpUUMq0URN07mgQeNA7jC_hd7odKwmMd47Im14EhxXILQdBlawLOLZmNLx-Am%7c1344021266;
+        domain=.paypal.com; path=/; HttpsOnly
+      - navcmd=_notify-synch; domain=.paypal.com; path=/; HttpsOnly
+      - navlns=0.0; expires=Thu, 29-Jul-2032 19:14:26 GMT; domain=.paypal.com; path=/;
+        HttpsOnly
+      Vary:
+      - Accept-Encoding
+      Content-Encoding:
+      - text
+      Transfer-Encoding:
+      - chunked
+      Content-Type:
+      - text/html; charset=UTF-8
+    body:
+      string: |
+        SUCCESS
+        first_name=Jane+Doe
+        last_name=Smith
+        payment_status=Completed
+        payer_email=janedoesmith%40hotmail.com
+        payment_gross=3.99
+        mc_currency=USD
+        txn_id=5555555
+        custom=For+the+purchase+of+the+rare+book+Green+Eggs+%26+Ham
+    http_version: 
+  recorded_at: Fri, 03 Aug 2012 19:14:27 GMT
+recorded_with: VCR 2.2.4

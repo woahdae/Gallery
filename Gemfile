@@ -17,18 +17,28 @@ group :assets do
 end
 
 group :test, :development do
+  gem 'pry'
+end
+
+group :test do
   gem 'minitest-rails'
+  gem 'minitest-capybara'
+  gem 'minitest-metadata'
+  gem 'sqlite3'
+  gem 'vcr'
+  gem 'webmock'
+  gem 'launchy'
+  gem 'database_cleaner'
 end
 
 group :development do
-  gem 'hpricot' # dep of html2haml
-  gem 'pry'
+  gem 'hpricot'     # dep of html2haml
+  gem 'ruby_parser' # dep of html2haml
 end
 
 
 gem 'haml'
 gem 'haml-rails'
-gem 'ruby_parser' # requirement of html2haml
 
 gem 'font-awesome-rails',
   # want the version that works w/ font awesome latest (2.0.3)
@@ -44,3 +54,5 @@ gem 'simple_form'
 gem 'paperclip'
 gem 'jquery-fileupload-rails'
 gem 'aws-sdk'
+
+gem 'rest-client'
