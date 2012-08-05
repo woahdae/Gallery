@@ -243,6 +243,7 @@ DEPENDENCIES
   rails (= 3.2.7)
   rest-client
   ruby_parser
+  rubyzip
   rufus-scheduler
   sass-rails (~> 3.2.3)
   simple_form

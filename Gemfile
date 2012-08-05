@@ -55,6 +55,7 @@ gem 'simple_form'
 
 gem 'paperclip'
 gem 'jquery-fileupload-rails'
+gem 'rubyzip'
 gem 'aws-sdk'
 
 gem 'rest-client'
