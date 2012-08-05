@@ -32,4 +32,8 @@ class Order < ActiveRecord::Base
 
     t
   end
+
+  def to_param
+    "#{id}-#{uuid}"
+  end
 end

@@ -1,12 +1,27 @@
-.well
-  %p= @order.uuid
-  %p= @order.total
+.row
+  .well.span8.offset2.order
+    .well
+      %h3
+        %i.icon-cart
+        Details
+      %table.table
+        %tr
+          %th Order ID
+          %td= @order.uuid
+        %tr
+          %th Order Total
+          %td= number_to_currency(@order.total)
 
-  %p= link_to 'Download', download_order_path(@order)
+      .actions
+        %p= link_to 'Download photos',
+          download_order_path(@order), class: 'btn btn-primary'
 
-  %ul.thumbnails
-    - @order.line_items.each do |li|
-      %li.thumbnail
-        = image_tag li.photo.image.url
-        .caption
-          Size: #{li.size}
+    .well
+      %h3 Photos
+
+      %ul.thumbnails
+        - @order.line_items.each do |li|
+          %li.thumbnail
+            = image_tag li.photo.image.url(:thumb)
+            .caption
+              Size: #{li.size}

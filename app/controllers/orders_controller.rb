@@ -7,7 +7,11 @@ class OrdersController < ApplicationController
   end
 
   def index
-    redirect_to @orders.first
+    if @orders.any?
+      redirect_to @orders.first
+    else
+      render
+    end
   end
 
   def download

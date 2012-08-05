@@ -1,3 +1,62 @@
-// Place all the styles related to the Orders controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+body.orders {
+  h3 {
+    font-family: "Pacifico";
+  }
+
+  .well .well {
+    background-color: #FFFFFF;
+  }
+
+  #leftsidebar {
+    float:left;
+    width:250px;
+    min-height:600px;
+  }
+
+  #leftsidebar .well {
+    margin:10px;
+    padding:10px;
+  }
+  #leftsidebar .menusb.well {
+    padding:0px;
+  }
+  #leftsidebar .menusb.well .navbar.navbar-heading {
+    margin:-1px -1px 0px 0px;
+  }
+  #leftsidebar .menusb.well ul.nav-tabs.tabs-two {
+    margin:-36px -2px 0px 0px;
+  }
+
+  .nav-tabs.nav-stacked {
+    margin:0px;	
+    background:none;
+  }
+  .nav-tabs.nav-stacked > li {
+    margin-bottom:0px;	
+  }
+  .nav-tabs.nav-stacked > li > a, .nav-tabs.nav-stacked > li > a:hover {
+    color:#454545;
+    font-weight:bold;
+    border-left-color:transparent;
+    border-right-color:transparent;
+    border-bottom-color:transparent;
+    position:relative;
+  }
+  .nav-tabs.nav-stacked > li.active > a, .nav-tabs.nav-stacked > li.active > a:hover {
+    color:#3a68b3;
+    background:#f9f9f9;
+  }
+  .nav-tabs.nav-stacked > li.active > a:after {
+    position: absolute;
+    width: 0;
+    height: 0;
+    top: -2px;
+    right: 10px;
+    margin-top: 10px;
+    border-top: 10px solid transparent;
+    border-bottom: 10px solid transparent;
+    border-left: 10px solid #3a68b3;
+    content: ' ';
+  }
+
+}
