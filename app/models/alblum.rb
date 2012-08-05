@@ -2,7 +2,8 @@ class Alblum < ActiveRecord::Base
   attr_accessible :name, :photos_attributes
 
   belongs_to :user, :inverse_of => :alblums
-  has_many :photos, :inverse_of => :alblum
+  has_many :photos, :inverse_of => :alblum,
+    :dependent => :destroy
 
   accepts_nested_attributes_for :photos
 

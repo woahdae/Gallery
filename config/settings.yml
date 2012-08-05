@@ -12,7 +12,6 @@ defaults:
     password:  '343847027'
     pdt_token: 'auqBVoSfcLsWiLp6C_WVYPzqZ8587uje3agL1NVtjJq-Xlmlz8SvyQ0KOx8'
     endpoint:  'https://www.sandbox.paypal.com/cgi-bin/webscr'
-    live:      false
 
 development:
   foo: bar
@@ -27,7 +26,6 @@ production:
     password:  ''
     pdt_token: 'RdBopUKIniNojuUAjZro8EUNL6PhwBgH7Mj4JpADqXVOHt2Qsu_q1OFaCcm'
     endpoint:  'https://www.paypal.com/cgi-bin/webscr'
-    live:      true
   s3:
     bucket: 'khouck-photos'
     zip_bucket: 'khouck-orders'

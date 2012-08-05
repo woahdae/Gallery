@@ -1,4 +1,11 @@
 module ApplicationHelper
+  def page_title
+    front = @alblum.try(:name)
+    front ||= controller_name.match(/cart/) ? 'Your Cart' : nil
+
+    [front, 'KHouck.com'].compact.join(' | ')
+  end
+
   def error_notice
     errors = []
     flash.to_hash.each_pair do |type, message|
