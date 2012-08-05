@@ -57,3 +57,6 @@ gem 'jquery-fileupload-rails'
 gem 'aws-sdk'
 
 gem 'rest-client'
+
+gem 'girl_friday'
+gem 'rufus-scheduler', :require => 'rufus/scheduler'

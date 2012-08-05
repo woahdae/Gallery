@@ -1,9 +1,11 @@
 defaults:
   domain: 'gallery.dev'
+  mail_from: 'katie@khouck.com'
   s3:
     access_key_id: AKIAILRF4EOSNYCDBE5A
     secret_access_key: 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
-    bucket: 'gallery98103-dev'
+    bucket: 'khouck-photos-dev'
+    zip_bucket: 'khouck-orders-dev'
   contact_email: 'katie@khouck.com'
   paypal:
     email:     'seller_1343845258_biz@gmail.com'
@@ -27,4 +29,5 @@ production:
     endpoint:  'https://www.paypal.com/cgi-bin/webscr'
     live:      true
   s3:
-    bucket: 'gallery98103'
+    bucket: 'khouck-photos'
+    zip_bucket: 'khouck-orders'

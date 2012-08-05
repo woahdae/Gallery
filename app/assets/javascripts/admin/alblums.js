@@ -1,6 +1,6 @@
 $(function () {
   // Initialize the jQuery File Upload widget:
-  $('#fileupload').fileupload();
+  $('#fileupload').fileupload({sequentialUploads: true});
 
   // Load existing files { redirect_to [:admin, @alblums.first] }
   $.getJSON($('#fileupload').prop('action'), function (files) {

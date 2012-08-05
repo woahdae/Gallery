@@ -15,7 +15,19 @@ class OrdersController < ApplicationController
   end
 
   def download
-    send_file @order.to_zip, type: "application/zip"
+    respond_to do |format|
+      format.js do
+        expired = @order.download_url.try(:match, /expired/)
+        valid = URI.parse(@order.download_url || '').scheme
+        if valid
+          render :json => {status: 'valid', url: @order.download_url}.to_json
+        elsif expired
+          render :json => {status: 'expired'}.to_json
+        else # not done yet
+          render :json => {status: 'pending'}.to_json
+        end
+      end
+    end
   end
 
   private

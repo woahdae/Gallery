@@ -13,8 +13,13 @@
           %td= number_to_currency(@order.total)
 
       .actions
-        %p= link_to 'Download photos',
-          download_order_path(@order), class: 'btn btn-primary'
+        = link_to 'Download photos', '#', id: 'download-link',
+          class: 'btn btn-primary disabled pull-left'
+
+        .spinner.pull-left
+          Generating download...
+
+      .clearfix
 
     .well
       %h3 Photos
@@ -25,3 +30,26 @@
             = image_tag li.photo.image.url(:thumb)
             .caption
               Size: #{li.size}
+
+:javascript
+
+  $(function() {
+    var ajax_download_check = function() {
+      $.ajax("#{url_for(download_order_path(@order))}", {
+        dataType: 'json',
+        success: function(xhr_data) {
+          if (xhr_data.status == 'pending') {
+            setTimeout(function() { ajax_download_check() }, 5000); // wait 5 seconds than call ajax request again
+          } else if (xhr_data.status == 'expired') {
+            $('.spinner').addClass('hide');
+            $('#download-link').replaceWith("Download link has expired");
+          } else {
+            $('#download-link').removeClass('disabled');
+            $('#download-link').attr('href', xhr_data.url);
+            $('.spinner').addClass('hide');
+          }
+        }
+      });
+    };
+    ajax_download_check();
+  })

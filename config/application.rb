@@ -70,5 +70,7 @@ module Gallery
       g.test_framework :mini_test, :spec => true, :fixture => false
       g.template_engine :haml
     end
+
+    config.threadsafe! # enable threadsafe for girl_friday
   end
 end

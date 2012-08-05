@@ -3,6 +3,17 @@ body.orders {
     font-family: "Pacifico";
   }
 
+  .spinner {
+    background-image: url(ajax-loader.gif);
+    background-repeat: no-repeat;
+    height: 32px;
+    padding-left: 40px;
+    margin-left: 10px;
+    position: relative;
+    bottom: 2px;
+    padding-top: 8px;
+  }
+
   .well .well {
     background-color: #FFFFFF;
   }

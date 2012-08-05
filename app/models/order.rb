@@ -10,8 +10,10 @@ class Order < ActiveRecord::Base
       order.uuid = cart.uuid
       order.user = user
       order.line_items = cart.line_items
+
       if order.save
         cart.destroy
+        Gallery::Jobs.zip_order << {order_id: order.id}
       end
     end
   end
