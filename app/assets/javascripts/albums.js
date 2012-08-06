@@ -3,26 +3,22 @@ $(function() {
 
   $('li.thumbnail').colorbox({
     rel: 'thumbnail',
+    inline: true,
+    photo: true,
     href: function() {
       return $(this).find('a.photo-link').attr('href')
     }
   });
 
-  // Prevent the click from going to the colorbox
-  $('.download form').click(function(e) {e.stopPropagation()})
-
-  $('body').on('ajax:success', '.download form', function(_, doc) {
+  $('body').on('ajax:success', '.purchase-options a', function(_, doc) {
     doc = eval(doc) // take away outer quotes; probably a better way...
     var hasCart = !!$('#cart').html().trim();
-    if (hasCart) {
-      $('#cart').replaceWith(doc);
-      prevColor = $('.cart-title').css('color');
-      $('.cart-title').animate({color: '#111'}).animate({color: prevColor});
-    } else {
+    if (!hasCart) {
       elem = $(doc)
       elem.hide();
       $('#cart').replaceWith(elem);
       elem.fadeIn(1000);
     }
+    $('.cart-flash').show().delay(1000).fadeOut();
   });
 })

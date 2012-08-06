@@ -32,9 +32,8 @@ class Photo < ActiveRecord::Base
         :watermark_path     => Rails.root + 'public/watermark.png',
         :watermark_position => 'South',
         :watermark_offset   => {x: 0, y: 200} },
-      :purchase_small  => '640x480>',
-      :purchase_medium => '640x480>',
-      :purchase_large  => '640x480>' }
+      :purchase_small  => '1200x800>',
+      :purchase_medium => '2000x2000>' }
 
   validates :image, :attachment_presence => true
 

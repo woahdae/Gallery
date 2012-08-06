@@ -1,10 +1,50 @@
 = render 'recent_albums'
 
+.cart-flash.hide
+  .alert.alert-success
+    Updated cart
+
 %ul#thumbnails.thumbnails
   - @album.photos.each do |photo|
     %li.span2.thumbnail[photo]
-      = link_to photo.image.url(:large), :class => 'photo-link' do
+      = link_to "##{dom_id(photo)}-large", :class => 'photo-link inline' do
         = image_tag photo.image.url(:medium)
+
+      .hidden
+        .fullsize{:id => "#{dom_id(photo)}-large"}
+          = image_tag photo.image.url(:large)
+
+          .cart.btn-group
+            %a.btn.btn-primary.dropdown-toggle{'data-toggle' => 'dropdown'}
+              %i.icon-shopping-cart
+            %ul.dropdown-menu.purchase-options
+              %li
+                %h4 Downloads
+              %li
+                = link_to add_cart_url(photo_id: photo.id, size: 'small'),
+                  :class => 'image-small', :method => :post, :remote => true do
+                  Small
+                  .pull-right
+                    $5.00
+                  %br
+                  (~1Mpix)
+              %li
+                = link_to add_cart_url(photo_id: photo.id, size: 'medium'),
+                  :class => 'image-medium', :method => :post, :remote => true do
+                  Medium
+                  .pull-right
+                    $10.00
+                  %br
+                  (~4Mpix)
+              %li
+                = link_to add_cart_url(photo_id: photo.id, size: 'large'),
+                  :class => 'image-large', :method => :post, :remote => true do
+                  Large
+                  .pull-right
+                    $15.00
+                  %br
+                  (original)
 
       .caption
         %i.zoom.icon-zoom-in
+
