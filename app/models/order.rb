@@ -27,7 +27,7 @@ class Order < ActiveRecord::Base
 
     Zip::ZipOutputStream.open(t.path) do |zip|
       line_items.each do |li|
-        zip.put_next_entry(File.join(self.uuid, li.photo.image_file_name))
+        zip.put_next_entry(File.join(self.uuid, li.download_url))
         zip.print(li.photo.image.s3_object.read)
       end
     end

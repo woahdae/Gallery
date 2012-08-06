@@ -26,4 +26,16 @@ class LineItem < ActiveRecord::Base
   def unit_price
     PRICES[size]
   end
+
+  def public_photo_url
+    photo.image(size)
+  end
+
+  def download_url
+    if size == 'large'
+      photo.image(:original)
+    else
+      photo.image("purchase_#{size}")
+    end
+  end
 end
