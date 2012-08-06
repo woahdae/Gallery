@@ -1,8 +1,8 @@
-class Alblum < ActiveRecord::Base
+class Album < ActiveRecord::Base
   attr_accessible :name, :photos_attributes
 
-  belongs_to :user, :inverse_of => :alblums
-  has_many :photos, :inverse_of => :alblum,
+  belongs_to :user, :inverse_of => :albums
+  has_many :photos, :inverse_of => :album,
     :dependent => :destroy
 
   accepts_nested_attributes_for :photos
@@ -16,7 +16,7 @@ class Alblum < ActiveRecord::Base
   def photos_attributes=(photos_attributes)
     self.photos += photos_attributes['images'].map do |image|
       photo = Photo.new(image: image)
-      photo.alblum_id = self.id
+      photo.album_id = self.id
       photo
     end
   end

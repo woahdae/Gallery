@@ -1,5 +1,5 @@
-class AlblumsController < ApplicationController
-  before_filter :load_recent_alblums
+class AlbumsController < ApplicationController
+  before_filter :load_recent_albums
   load_and_authorize_resource
   skip_load_and_authorize_resource :only => :index
 
@@ -9,8 +9,8 @@ class AlblumsController < ApplicationController
   end
 
   def index
-    if @recent_alblums.any?
-      redirect_to @recent_alblums.first
+    if @recent_albums.any?
+      redirect_to @recent_albums.first
     else
       render
     end
@@ -18,8 +18,8 @@ class AlblumsController < ApplicationController
 
   private
 
-  def load_recent_alblums
-    @recent_alblums = Alblum.accessible_by(current_ability).
+  def load_recent_albums
+    @recent_albums = Album.accessible_by(current_ability).
                         order('id ASC').limit(5)
   end
 

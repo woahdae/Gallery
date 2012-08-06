@@ -1,7 +1,7 @@
-= render 'recent_alblums'
+= render 'recent_albums'
 
 %ul#thumbnails.thumbnails
-  - @alblum.photos.each do |photo|
+  - @album.photos.each do |photo|
     %li.span2.thumbnail[photo]
       = link_to photo.image.url(:large), :class => 'photo-link' do
         = image_tag photo.image.url(:medium)

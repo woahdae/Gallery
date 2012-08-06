@@ -1,0 +1,16 @@
+.span3.leftsidebar
+  .menusb.well
+    .navbar.navbar-heading
+      .navbar-inner
+        %a.brand{:href => "#"} Albums
+    %ul.nav.nav-tabs.nav-stacked
+      - @albums.each do |album|
+        %li{:class => active_album(album, :current => @album)}
+          %a{:href => url_for([:admin, album])}
+            %i.icon-large.icon-th-large
+            = album.name
+      %li.hr
+      %li{:class => active_album(@album)}
+        %a{:href => new_admin_album_path}
+          %i.icon-large.icon-th-large
+          New Album

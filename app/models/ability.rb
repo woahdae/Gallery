@@ -2,7 +2,7 @@ class Ability
   include CanCan::Ability
 
   def initialize(user)
-    can :read, Alblum
+    can :read, Album
 
     if user
       can :read, Order, :user_id => user.id

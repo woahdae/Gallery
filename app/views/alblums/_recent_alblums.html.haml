@@ -1,5 +1,0 @@
-.clearfix
-  %ul.filter-nav
-    - @recent_alblums.each do |alblum|
-      %li{:class => active_alblum(alblum, :current => @alblum)}
-        = link_to alblum.name, alblum

@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: put
-    uri: https://gallery98103-dev.s3.amazonaws.com/photos/images/000/000/001/original/bikers1.jpg
+    uri: https://khouck-photos-dev.s3.amazonaws.com/photos/images/000/000/001/original/bikers1.jpg
     body:
       encoding: ASCII-8BIT
       string: !binary |-
@@ -1881,7 +1881,7 @@ http_interactions:
   recorded_at: Sat, 04 Aug 2012 17:37:34 GMT
 - request:
     method: put
-    uri: https://gallery98103-dev.s3.amazonaws.com/photos/images/000/000/001/thumb/bikers1.jpg
+    uri: https://khouck-photos-dev.s3.amazonaws.com/photos/images/000/000/001/thumb/bikers1.jpg
     body:
       encoding: ASCII-8BIT
       string: !binary |-
@@ -3760,7 +3760,7 @@ http_interactions:
   recorded_at: Sat, 04 Aug 2012 17:37:35 GMT
 - request:
     method: put
-    uri: https://gallery98103-dev.s3.amazonaws.com/photos/images/000/000/001/medium/bikers1.jpg
+    uri: https://khouck-photos-dev.s3.amazonaws.com/photos/images/000/000/001/medium/bikers1.jpg
     body:
       encoding: ASCII-8BIT
       string: !binary |-
@@ -5643,7 +5643,7 @@ http_interactions:
   recorded_at: Sat, 04 Aug 2012 17:37:35 GMT
 - request:
     method: put
-    uri: https://gallery98103-dev.s3.amazonaws.com/photos/images/000/000/001/large/bikers1.jpg
+    uri: https://khouck-photos-dev.s3.amazonaws.com/photos/images/000/000/001/large/bikers1.jpg
     body:
       encoding: ASCII-8BIT
       string: !binary |-
@@ -7522,7 +7522,7 @@ http_interactions:
   recorded_at: Sat, 04 Aug 2012 17:37:36 GMT
 - request:
     method: put
-    uri: https://gallery98103-dev.s3.amazonaws.com/photos/images/000/000/001/purchase_small/bikers1.jpg
+    uri: https://khouck-photos-dev.s3.amazonaws.com/photos/images/000/000/001/purchase_small/bikers1.jpg
     body:
       encoding: ASCII-8BIT
       string: !binary |-
@@ -9401,7 +9401,7 @@ http_interactions:
   recorded_at: Sat, 04 Aug 2012 17:37:37 GMT
 - request:
     method: put
-    uri: https://gallery98103-dev.s3.amazonaws.com/photos/images/000/000/001/purchase_medium/bikers1.jpg
+    uri: https://khouck-photos-dev.s3.amazonaws.com/photos/images/000/000/001/purchase_medium/bikers1.jpg
     body:
       encoding: ASCII-8BIT
       string: !binary |-
@@ -11280,7 +11280,7 @@ http_interactions:
   recorded_at: Sat, 04 Aug 2012 17:37:38 GMT
 - request:
     method: put
-    uri: https://gallery98103-dev.s3.amazonaws.com/photos/images/000/000/001/purchase_large/bikers1.jpg
+    uri: https://khouck-photos-dev.s3.amazonaws.com/photos/images/000/000/001/purchase_large/bikers1.jpg
     body:
       encoding: ASCII-8BIT
       string: !binary |-
@@ -13159,7 +13159,7 @@ http_interactions:
   recorded_at: Sat, 04 Aug 2012 17:37:39 GMT
 - request:
     method: put
-    uri: https://gallery98103-dev.s3.amazonaws.com/photos/images/000/000/002/original/bikers2.jpg
+    uri: https://khouck-photos-dev.s3.amazonaws.com/photos/images/000/000/002/original/bikers2.jpg
     body:
       encoding: ASCII-8BIT
       string: !binary |-
@@ -14704,7 +14704,7 @@ http_interactions:
   recorded_at: Sat, 04 Aug 2012 17:37:40 GMT
 - request:
     method: put
-    uri: https://gallery98103-dev.s3.amazonaws.com/photos/images/000/000/002/thumb/bikers2.jpg
+    uri: https://khouck-photos-dev.s3.amazonaws.com/photos/images/000/000/002/thumb/bikers2.jpg
     body:
       encoding: ASCII-8BIT
       string: !binary |-
@@ -16248,7 +16248,7 @@ http_interactions:
   recorded_at: Sat, 04 Aug 2012 17:37:42 GMT
 - request:
     method: put
-    uri: https://gallery98103-dev.s3.amazonaws.com/photos/images/000/000/002/medium/bikers2.jpg
+    uri: https://khouck-photos-dev.s3.amazonaws.com/photos/images/000/000/002/medium/bikers2.jpg
     body:
       encoding: ASCII-8BIT
       string: !binary |-
@@ -17797,7 +17797,7 @@ http_interactions:
   recorded_at: Sat, 04 Aug 2012 17:37:43 GMT
 - request:
     method: put
-    uri: https://gallery98103-dev.s3.amazonaws.com/photos/images/000/000/002/large/bikers2.jpg
+    uri: https://khouck-photos-dev.s3.amazonaws.com/photos/images/000/000/002/large/bikers2.jpg
     body:
       encoding: ASCII-8BIT
       string: !binary |-
@@ -19341,7 +19341,7 @@ http_interactions:
   recorded_at: Sat, 04 Aug 2012 17:37:43 GMT
 - request:
     method: put
-    uri: https://gallery98103-dev.s3.amazonaws.com/photos/images/000/000/002/purchase_small/bikers2.jpg
+    uri: https://khouck-photos-dev.s3.amazonaws.com/photos/images/000/000/002/purchase_small/bikers2.jpg
     body:
       encoding: ASCII-8BIT
       string: !binary |-
@@ -20885,7 +20885,7 @@ http_interactions:
   recorded_at: Sat, 04 Aug 2012 17:37:44 GMT
 - request:
     method: put
-    uri: https://gallery98103-dev.s3.amazonaws.com/photos/images/000/000/002/purchase_medium/bikers2.jpg
+    uri: https://khouck-photos-dev.s3.amazonaws.com/photos/images/000/000/002/purchase_medium/bikers2.jpg
     body:
       encoding: ASCII-8BIT
       string: !binary |-
@@ -22429,7 +22429,7 @@ http_interactions:
   recorded_at: Sat, 04 Aug 2012 17:37:45 GMT
 - request:
     method: put
-    uri: https://gallery98103-dev.s3.amazonaws.com/photos/images/000/000/002/purchase_large/bikers2.jpg
+    uri: https://khouck-photos-dev.s3.amazonaws.com/photos/images/000/000/002/purchase_large/bikers2.jpg
     body:
       encoding: ASCII-8BIT
       string: !binary |-
@@ -23973,7 +23973,7 @@ http_interactions:
   recorded_at: Sat, 04 Aug 2012 17:37:46 GMT
 - request:
     method: get
-    uri: https://gallery98103-dev.s3.amazonaws.com/photos/images/000/000/001/original/bikers1.jpg
+    uri: https://khouck-photos-dev.s3.amazonaws.com/photos/images/000/000/001/original/bikers1.jpg
     body:
       encoding: US-ASCII
       string: ''
@@ -25854,7 +25854,7 @@ http_interactions:
   recorded_at: Sat, 04 Aug 2012 17:37:46 GMT
 - request:
     method: get
-    uri: https://gallery98103-dev.s3.amazonaws.com/photos/images/000/000/002/original/bikers2.jpg
+    uri: https://khouck-photos-dev.s3.amazonaws.com/photos/images/000/000/002/original/bikers2.jpg
     body:
       encoding: US-ASCII
       string: ''
@@ -27401,7 +27401,7 @@ http_interactions:
   recorded_at: Sat, 04 Aug 2012 17:37:47 GMT
 - request:
     method: head
-    uri: https://gallery98103-dev.s3.amazonaws.com/photos/images/000/000/001/original/bikers1.jpg
+    uri: https://khouck-photos-dev.s3.amazonaws.com/photos/images/000/000/001/original/bikers1.jpg
     body:
       encoding: US-ASCII
       string: ''
@@ -27446,7 +27446,7 @@ http_interactions:
   recorded_at: Sat, 04 Aug 2012 17:37:47 GMT
 - request:
     method: head
-    uri: https://gallery98103-dev.s3.amazonaws.com/photos/images/000/000/001/thumb/bikers1.jpg
+    uri: https://khouck-photos-dev.s3.amazonaws.com/photos/images/000/000/001/thumb/bikers1.jpg
     body:
       encoding: US-ASCII
       string: ''
@@ -27491,7 +27491,7 @@ http_interactions:
   recorded_at: Sat, 04 Aug 2012 17:37:48 GMT
 - request:
     method: head
-    uri: https://gallery98103-dev.s3.amazonaws.com/photos/images/000/000/001/medium/bikers1.jpg
+    uri: https://khouck-photos-dev.s3.amazonaws.com/photos/images/000/000/001/medium/bikers1.jpg
     body:
       encoding: US-ASCII
       string: ''
@@ -27536,7 +27536,7 @@ http_interactions:
   recorded_at: Sat, 04 Aug 2012 17:37:48 GMT
 - request:
     method: head
-    uri: https://gallery98103-dev.s3.amazonaws.com/photos/images/000/000/001/large/bikers1.jpg
+    uri: https://khouck-photos-dev.s3.amazonaws.com/photos/images/000/000/001/large/bikers1.jpg
     body:
       encoding: US-ASCII
       string: ''
@@ -27581,7 +27581,7 @@ http_interactions:
   recorded_at: Sat, 04 Aug 2012 17:37:49 GMT
 - request:
     method: head
-    uri: https://gallery98103-dev.s3.amazonaws.com/photos/images/000/000/001/purchase_small/bikers1.jpg
+    uri: https://khouck-photos-dev.s3.amazonaws.com/photos/images/000/000/001/purchase_small/bikers1.jpg
     body:
       encoding: US-ASCII
       string: ''
@@ -27626,7 +27626,7 @@ http_interactions:
   recorded_at: Sat, 04 Aug 2012 17:37:49 GMT
 - request:
     method: head
-    uri: https://gallery98103-dev.s3.amazonaws.com/photos/images/000/000/001/purchase_medium/bikers1.jpg
+    uri: https://khouck-photos-dev.s3.amazonaws.com/photos/images/000/000/001/purchase_medium/bikers1.jpg
     body:
       encoding: US-ASCII
       string: ''
@@ -27671,7 +27671,7 @@ http_interactions:
   recorded_at: Sat, 04 Aug 2012 17:37:49 GMT
 - request:
     method: head
-    uri: https://gallery98103-dev.s3.amazonaws.com/photos/images/000/000/001/purchase_large/bikers1.jpg
+    uri: https://khouck-photos-dev.s3.amazonaws.com/photos/images/000/000/001/purchase_large/bikers1.jpg
     body:
       encoding: US-ASCII
       string: ''
@@ -27716,7 +27716,7 @@ http_interactions:
   recorded_at: Sat, 04 Aug 2012 17:37:50 GMT
 - request:
     method: delete
-    uri: https://gallery98103-dev.s3.amazonaws.com/photos/images/000/000/001/original/bikers1.jpg
+    uri: https://khouck-photos-dev.s3.amazonaws.com/photos/images/000/000/001/original/bikers1.jpg
     body:
       encoding: US-ASCII
       string: ''
@@ -27751,7 +27751,7 @@ http_interactions:
   recorded_at: Sat, 04 Aug 2012 17:37:50 GMT
 - request:
     method: delete
-    uri: https://gallery98103-dev.s3.amazonaws.com/photos/images/000/000/001/thumb/bikers1.jpg
+    uri: https://khouck-photos-dev.s3.amazonaws.com/photos/images/000/000/001/thumb/bikers1.jpg
     body:
       encoding: US-ASCII
       string: ''
@@ -27786,7 +27786,7 @@ http_interactions:
   recorded_at: Sat, 04 Aug 2012 17:37:51 GMT
 - request:
     method: delete
-    uri: https://gallery98103-dev.s3.amazonaws.com/photos/images/000/000/001/medium/bikers1.jpg
+    uri: https://khouck-photos-dev.s3.amazonaws.com/photos/images/000/000/001/medium/bikers1.jpg
     body:
       encoding: US-ASCII
       string: ''
@@ -27821,7 +27821,7 @@ http_interactions:
   recorded_at: Sat, 04 Aug 2012 17:37:51 GMT
 - request:
     method: delete
-    uri: https://gallery98103-dev.s3.amazonaws.com/photos/images/000/000/001/large/bikers1.jpg
+    uri: https://khouck-photos-dev.s3.amazonaws.com/photos/images/000/000/001/large/bikers1.jpg
     body:
       encoding: US-ASCII
       string: ''
@@ -27856,7 +27856,7 @@ http_interactions:
   recorded_at: Sat, 04 Aug 2012 17:37:51 GMT
 - request:
     method: delete
-    uri: https://gallery98103-dev.s3.amazonaws.com/photos/images/000/000/001/purchase_small/bikers1.jpg
+    uri: https://khouck-photos-dev.s3.amazonaws.com/photos/images/000/000/001/purchase_small/bikers1.jpg
     body:
       encoding: US-ASCII
       string: ''
@@ -27891,7 +27891,7 @@ http_interactions:
   recorded_at: Sat, 04 Aug 2012 17:37:52 GMT
 - request:
     method: delete
-    uri: https://gallery98103-dev.s3.amazonaws.com/photos/images/000/000/001/purchase_medium/bikers1.jpg
+    uri: https://khouck-photos-dev.s3.amazonaws.com/photos/images/000/000/001/purchase_medium/bikers1.jpg
     body:
       encoding: US-ASCII
       string: ''
@@ -27926,7 +27926,7 @@ http_interactions:
   recorded_at: Sat, 04 Aug 2012 17:37:52 GMT
 - request:
     method: delete
-    uri: https://gallery98103-dev.s3.amazonaws.com/photos/images/000/000/001/purchase_large/bikers1.jpg
+    uri: https://khouck-photos-dev.s3.amazonaws.com/photos/images/000/000/001/purchase_large/bikers1.jpg
     body:
       encoding: US-ASCII
       string: ''
@@ -27961,7 +27961,7 @@ http_interactions:
   recorded_at: Sat, 04 Aug 2012 17:37:52 GMT
 - request:
     method: head
-    uri: https://gallery98103-dev.s3.amazonaws.com/photos/images/000/000/002/original/bikers2.jpg
+    uri: https://khouck-photos-dev.s3.amazonaws.com/photos/images/000/000/002/original/bikers2.jpg
     body:
       encoding: US-ASCII
       string: ''
@@ -28006,7 +28006,7 @@ http_interactions:
   recorded_at: Sat, 04 Aug 2012 17:37:53 GMT
 - request:
     method: head
-    uri: https://gallery98103-dev.s3.amazonaws.com/photos/images/000/000/002/thumb/bikers2.jpg
+    uri: https://khouck-photos-dev.s3.amazonaws.com/photos/images/000/000/002/thumb/bikers2.jpg
     body:
       encoding: US-ASCII
       string: ''
@@ -28051,7 +28051,7 @@ http_interactions:
   recorded_at: Sat, 04 Aug 2012 17:37:53 GMT
 - request:
     method: head
-    uri: https://gallery98103-dev.s3.amazonaws.com/photos/images/000/000/002/medium/bikers2.jpg
+    uri: https://khouck-photos-dev.s3.amazonaws.com/photos/images/000/000/002/medium/bikers2.jpg
     body:
       encoding: US-ASCII
       string: ''
@@ -28096,7 +28096,7 @@ http_interactions:
   recorded_at: Sat, 04 Aug 2012 17:37:54 GMT
 - request:
     method: head
-    uri: https://gallery98103-dev.s3.amazonaws.com/photos/images/000/000/002/large/bikers2.jpg
+    uri: https://khouck-photos-dev.s3.amazonaws.com/photos/images/000/000/002/large/bikers2.jpg
     body:
       encoding: US-ASCII
       string: ''
@@ -28141,7 +28141,7 @@ http_interactions:
   recorded_at: Sat, 04 Aug 2012 17:37:54 GMT
 - request:
     method: head
-    uri: https://gallery98103-dev.s3.amazonaws.com/photos/images/000/000/002/purchase_small/bikers2.jpg
+    uri: https://khouck-photos-dev.s3.amazonaws.com/photos/images/000/000/002/purchase_small/bikers2.jpg
     body:
       encoding: US-ASCII
       string: ''
@@ -28186,7 +28186,7 @@ http_interactions:
   recorded_at: Sat, 04 Aug 2012 17:37:54 GMT
 - request:
     method: head
-    uri: https://gallery98103-dev.s3.amazonaws.com/photos/images/000/000/002/purchase_medium/bikers2.jpg
+    uri: https://khouck-photos-dev.s3.amazonaws.com/photos/images/000/000/002/purchase_medium/bikers2.jpg
     body:
       encoding: US-ASCII
       string: ''
@@ -28231,7 +28231,7 @@ http_interactions:
   recorded_at: Sat, 04 Aug 2012 17:37:55 GMT
 - request:
     method: head
-    uri: https://gallery98103-dev.s3.amazonaws.com/photos/images/000/000/002/purchase_large/bikers2.jpg
+    uri: https://khouck-photos-dev.s3.amazonaws.com/photos/images/000/000/002/purchase_large/bikers2.jpg
     body:
       encoding: US-ASCII
       string: ''
@@ -28276,7 +28276,7 @@ http_interactions:
   recorded_at: Sat, 04 Aug 2012 17:37:55 GMT
 - request:
     method: delete
-    uri: https://gallery98103-dev.s3.amazonaws.com/photos/images/000/000/002/original/bikers2.jpg
+    uri: https://khouck-photos-dev.s3.amazonaws.com/photos/images/000/000/002/original/bikers2.jpg
     body:
       encoding: US-ASCII
       string: ''
@@ -28311,7 +28311,7 @@ http_interactions:
   recorded_at: Sat, 04 Aug 2012 17:37:56 GMT
 - request:
     method: delete
-    uri: https://gallery98103-dev.s3.amazonaws.com/photos/images/000/000/002/thumb/bikers2.jpg
+    uri: https://khouck-photos-dev.s3.amazonaws.com/photos/images/000/000/002/thumb/bikers2.jpg
     body:
       encoding: US-ASCII
       string: ''
@@ -28346,7 +28346,7 @@ http_interactions:
   recorded_at: Sat, 04 Aug 2012 17:37:56 GMT
 - request:
     method: delete
-    uri: https://gallery98103-dev.s3.amazonaws.com/photos/images/000/000/002/medium/bikers2.jpg
+    uri: https://khouck-photos-dev.s3.amazonaws.com/photos/images/000/000/002/medium/bikers2.jpg
     body:
       encoding: US-ASCII
       string: ''
@@ -28381,7 +28381,7 @@ http_interactions:
   recorded_at: Sat, 04 Aug 2012 17:37:56 GMT
 - request:
     method: delete
-    uri: https://gallery98103-dev.s3.amazonaws.com/photos/images/000/000/002/large/bikers2.jpg
+    uri: https://khouck-photos-dev.s3.amazonaws.com/photos/images/000/000/002/large/bikers2.jpg
     body:
       encoding: US-ASCII
       string: ''
@@ -28416,7 +28416,7 @@ http_interactions:
   recorded_at: Sat, 04 Aug 2012 17:37:57 GMT
 - request:
     method: delete
-    uri: https://gallery98103-dev.s3.amazonaws.com/photos/images/000/000/002/purchase_small/bikers2.jpg
+    uri: https://khouck-photos-dev.s3.amazonaws.com/photos/images/000/000/002/purchase_small/bikers2.jpg
     body:
       encoding: US-ASCII
       string: ''
@@ -28451,7 +28451,7 @@ http_interactions:
   recorded_at: Sat, 04 Aug 2012 17:37:57 GMT
 - request:
     method: delete
-    uri: https://gallery98103-dev.s3.amazonaws.com/photos/images/000/000/002/purchase_medium/bikers2.jpg
+    uri: https://khouck-photos-dev.s3.amazonaws.com/photos/images/000/000/002/purchase_medium/bikers2.jpg
     body:
       encoding: US-ASCII
       string: ''
@@ -28486,7 +28486,7 @@ http_interactions:
   recorded_at: Sat, 04 Aug 2012 17:37:58 GMT
 - request:
     method: delete
-    uri: https://gallery98103-dev.s3.amazonaws.com/photos/images/000/000/002/purchase_large/bikers2.jpg
+    uri: https://khouck-photos-dev.s3.amazonaws.com/photos/images/000/000/002/purchase_large/bikers2.jpg
     body:
       encoding: US-ASCII
       string: ''

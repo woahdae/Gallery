@@ -11,16 +11,16 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120805051926) do
+ActiveRecord::Schema.define(:version => 20120806184527) do
 
-  create_table "alblums", :force => true do |t|
+  create_table "albums", :force => true do |t|
     t.string   "name"
     t.integer  "user_id"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
   end
 
-  add_index "alblums", ["user_id"], :name => "index_alblums_on_user_id"
+  add_index "albums", ["user_id"], :name => "index_alblums_on_user_id"
 
   create_table "carts", :force => true do |t|
     t.string   "session_id"
@@ -69,7 +69,7 @@ ActiveRecord::Schema.define(:version => 20120805051926) do
   end
 
   create_table "photos", :force => true do |t|
-    t.integer  "alblum_id"
+    t.integer  "album_id"
     t.datetime "created_at",         :null => false
     t.datetime "updated_at",         :null => false
     t.string   "image_file_name"
@@ -78,7 +78,7 @@ ActiveRecord::Schema.define(:version => 20120805051926) do
     t.datetime "image_updated_at"
   end
 
-  add_index "photos", ["alblum_id"], :name => "index_photos_on_alblum_id"
+  add_index "photos", ["album_id"], :name => "index_photos_on_alblum_id"
 
   create_table "users", :force => true do |t|
     t.string   "email",                  :default => "", :null => false

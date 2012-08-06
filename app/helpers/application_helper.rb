@@ -1,6 +1,6 @@
 module ApplicationHelper
   def page_title
-    front = @alblum.try(:name)
+    front = @album.try(:name)
     front ||= controller_name.match(/cart/) ? 'Your Cart' : nil
 
     [front, 'KHouck.com'].compact.join(' | ')
@@ -14,17 +14,17 @@ module ApplicationHelper
     safe_join(errors)
   end
 
-  def active_alblum(alblum, options = {})
-    if alblum.try(:new_record?) && action_name == 'new'
+  def active_album(album, options = {})
+    if album.try(:new_record?) && action_name == 'new'
       'active'
-    elsif alblum.try(:id) == options[:current].try(:id)
+    elsif album.try(:id) == options[:current].try(:id)
       'active'
     end
   end
 
   def user_path(user)
     if user.admin?
-      admin_alblums_path
+      admin_albums_path
     else
       orders_path
     end

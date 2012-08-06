@@ -1,13 +1,13 @@
 require_relative '../minitest_helper'
 
 class UserAddsPhotosToCartTest < IntegrationTest
-  let(:alblum) { Factory.create(:alblum,
+  let(:album) { Factory.create(:album,
                                 :photos => [photo1, photo2, photo3]) }
   let(:photo1) { Factory.create(:photo) }
   let(:photo2) { Factory.create(:photo) }
   let(:photo3) { Factory.create(:photo) }
 
-  before { alblum }
+  before { album }
 
   it 'user adds a photo to their cart' do
     visit root_path

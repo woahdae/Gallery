@@ -1,0 +1,5 @@
+.clearfix
+  %ul.filter-nav
+    - @recent_albums.each do |album|
+      %li{:class => active_album(album, :current => @album)}
+        = link_to album.name, album

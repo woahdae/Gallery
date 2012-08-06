@@ -1,4 +1,4 @@
-= render 'alblum_list'
+= render 'album_list'
 
 .span9.contentcolumn
   .row-fluid
@@ -7,10 +7,10 @@
         .navbar.navbar-heading
           .navbar-inner
             .container{:style => "width: auto;"}
-              %a.brand{:href => "#"} New Alblum
-        = simple_form_for [:admin, @alblum] do |f|
+              %a.brand{:href => "#"} New Album
+        = simple_form_for [:admin, @album] do |f|
           = f.input :name
 
           .actions
-            = f.submit 'Create Alblum', :class => 'btn btn_primary'
+            = f.submit 'Create Album', :class => 'btn btn_primary'
 

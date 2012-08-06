@@ -2,7 +2,7 @@ $(function () {
   // Initialize the jQuery File Upload widget:
   $('#fileupload').fileupload({sequentialUploads: true});
 
-  // Load existing files { redirect_to [:admin, @alblums.first] }
+  // Load existing files { redirect_to [:admin, @albums.first] }
   $.getJSON($('#fileupload').prop('action'), function (files) {
     var fu = $('#fileupload').data('fileupload'), 
       template;
