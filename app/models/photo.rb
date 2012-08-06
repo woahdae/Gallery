@@ -23,7 +23,7 @@ class Photo < ActiveRecord::Base
     :styles => {
       :thumb  => "250x250>",
       :medium  => {
-        :geometry           => "600x400>",
+        :geometry           => "450x300>",
         :watermark_path     => Rails.root + 'public/watermark.png',
         :watermark_position => 'South',
         :watermark_offset   => {x: 0, y: 100} },

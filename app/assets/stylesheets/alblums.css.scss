@@ -47,7 +47,7 @@ body.alblums {
       -o-transition: all 0.2s ease-in-out;
       -ms-transition: all 0.2s ease-in-out;
       transition: all 0.2s ease-in-out;
-      top: 30%;
+      top: 50%;
       &.zoom {
         left: 50%;
       }
@@ -116,19 +116,19 @@ body.alblums {
 
         /* Portrait tablet to landscape and desktop */
         @media (min-width: 768px) and (max-width: 979px) {
-          width: 2 * 166px;
-          height: 249px;
+          width: 2 * 104px;
+          height: 119px;
         }
 
         @media (min-width: 980px) and (max-width: 1199px) {
-          width: 2 * 220px;
-          height: 330px;
+          width: 2 * 137px;
+          height: 156px;
         }
 
         /* Large desktop */
         @media (min-width: 1200px) {
-          width: 2 * 270px;
-          height: 399px;
+          width: 2 * 170px;
+          height: 250px;
         }
 
       }
