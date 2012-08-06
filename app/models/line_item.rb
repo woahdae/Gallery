@@ -33,9 +33,9 @@ class LineItem < ActiveRecord::Base
 
   def download_object
     if size == 'large'
-      photo.image.s3_object(:original).read
+      photo.image.s3_object(:original)
     else
-      photo.image.s3_object("purchase_#{size}").read
+      photo.image.s3_object("purchase_#{size}")
     end
   end
 end
