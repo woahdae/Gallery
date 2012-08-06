@@ -31,11 +31,11 @@ class LineItem < ActiveRecord::Base
     photo.image(size)
   end
 
-  def download_url
+  def download_object
     if size == 'large'
-      photo.image(:original)
+      li.photo.image.s3_object(:original).read
     else
-      photo.image("purchase_#{size}")
+      li.photo.image.s3_object("purchase_#{size}").read
     end
   end
 end
