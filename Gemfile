@@ -21,6 +21,10 @@ group :test, :development do
   gem 'pry'
 end
 
+group :production do
+  gem 'newrelic_rpm'
+end
+
 group :test do
   gem 'minitest-rails'
   gem 'minitest-capybara'
