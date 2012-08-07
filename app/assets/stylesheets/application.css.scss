@@ -24,6 +24,7 @@
 }
 
 #cart {
+  position: relative;
   padding-top: 10px;
   padding-right: 30px;
   a {
@@ -46,6 +47,14 @@
   font-family: "Pacifico";
   text-shadow: 0px 1px 1px #000;
   margin: 10px 0;
+
+  .cart-count {
+    position: absolute;
+    top: -0px;
+    right: 35px;
+    color: #FFF;
+    text-shadow: 1px #000;
+  }
 }
 
 #login {

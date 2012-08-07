@@ -21,9 +21,9 @@ class Photo < ActiveRecord::Base
       :secret_access_key => Gallery.settings.s3.secret_access_key },
     :bucket => Gallery.settings.s3.bucket,
     :styles => {
-      :thumb  => "250x250>",
+      :thumb  => "180x180>",
       :medium  => {
-        :geometry           => "450x300>",
+        :geometry           => "380x250>",
         :watermark_path     => Rails.root + 'public/watermark.png',
         :watermark_position => 'South',
         :watermark_offset   => {x: 0, y: 100} },
@@ -32,8 +32,8 @@ class Photo < ActiveRecord::Base
         :watermark_path     => Rails.root + 'public/watermark.png',
         :watermark_position => 'South',
         :watermark_offset   => {x: 0, y: 200} },
-      :purchase_small  => '1200x800>',
-      :purchase_medium => '2000x2000>' }
+      :purchase_small  => '1000x1000>',
+      :purchase_medium => '2600x2600>' }
 
   validates :image, :attachment_presence => true
 

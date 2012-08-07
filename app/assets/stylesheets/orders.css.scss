@@ -7,8 +7,16 @@ body.orders {
     background-color: #AAAAAA;
   }
 
+  .thumbnails {
+    margin: 0 auto;
+  }
+
   .thumbnail {
-    background-color: #FFFFFF;
+    background-color: #FFF;
+    img { border: 1px solid #999 }
+    /*background-color: #222;*/
+    /*img { border: 1px solid #999 }*/
+    /*color: #AAA;*/
     position: relative;
     // http://css3gen.com/box-shadow/
     -webkit-box-shadow: 4px 4px 5px rgba(50, 50, 50, 0.76);
@@ -25,7 +33,6 @@ body.orders {
       text-align: center;
       position: absolute;
       top: 150px;
-      left: 30px;
     }
   }
 }

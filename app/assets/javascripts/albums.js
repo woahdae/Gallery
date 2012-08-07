@@ -12,13 +12,17 @@ $(function() {
 
   $('body').on('ajax:success', '.purchase-options a', function(_, doc) {
     doc = eval(doc) // take away outer quotes; probably a better way...
+
     var hasCart = !!$('#cart').html().trim();
-    if (!hasCart) {
+    if (hasCart) {
+      $('#cart').replaceWith(doc);
+    } else {
       elem = $(doc)
       elem.hide();
       $('#cart').replaceWith(elem);
       elem.fadeIn(1000);
     }
+
     $('.cart-flash').show().delay(1000).fadeOut();
   });
 })

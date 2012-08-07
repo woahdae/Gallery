@@ -3,3 +3,4 @@
     = link_to cart_path do
       %span.cart-title Your Cart
       %i.icon-shopping-cart.icon-large
+      .cart-count= @cart.line_items.count

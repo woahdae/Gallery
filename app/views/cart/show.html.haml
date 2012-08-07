@@ -7,33 +7,46 @@
 
   .well
     .row
-      %fieldset.span6
-        %label Photos
-        %ul.thumbnails
-          - @cart.line_items.each do |li|
-            %li.span2
-              .thumbnail
-                = link_to li.photo.image.url(:large), :class => 'thumb' do
-                  = image_tag li.photo.image.url(:thumb)
-                .caption
-                  Size: #{li.size}
+      .span7
+        .well
+          %h3 Photos
+          %ul.thumbnails
+            - @cart.line_items.each do |li|
+              %li.span2
+                .thumbnail
+                  = link_to li.photo.image.url(:large), :class => 'thumb' do
+                    = image_tag li.photo.image.url(:thumb)
+
                   = link_to remove_cart_url(:photo_id => li.photo.id),
                     method: :delete, rel: 'tooltip', class: "delete pull-right",
                     title: 'Remove from cart' do
                     %i.icon-remove-sign.icon-large
 
-      %fieldset.span5.download
+                  .caption
+                    #{li.size.capitalize} (#{number_to_currency(li.unit_price)})
+
+      %fieldset.span4.download
         %label Download
 
         %ul
           %li After purchasing, items will be available as a digital download.
           %li
             I do prints also, but for now you'll need to
-            = link_to 'contact me', 'mailto:katie@khouck.com'
+            = mail_to 'katie@khouck.com', 'contact me', encode: 'javascript'
             to order those.
           %li
             Note: you do not need a PayPal account to check out. Look for
             the 'pay as a guest' link if you do not wish to create one.
+
+        %table.table
+          %tr
+            %th Order Total
+            %td= number_to_currency(@cart.total)
+
+        = link_to request.referrer || root_path,
+          :class => 'btn btn-inverse', id: 'browse' do
+          Continue Browsing
+          %i.icon-signin
 
         = link_to PaypalPayment.new(@cart, with: :size).checkout_url,
           id: 'paypal-checkout' do

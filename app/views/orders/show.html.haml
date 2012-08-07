@@ -28,7 +28,7 @@
           %td= number_to_currency(@order.total)
         %tr
           %th Payment Status
-          %td Complete
+          %td= @order.payment_status
 
       = link_to root_path, :class => 'btn btn-inverse' do
         Continue Browsing

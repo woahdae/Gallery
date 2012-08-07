@@ -1,10 +1,8 @@
 body.cart, body.orders {
 
-  fieldset {
-    label {
-      font-family: "Pacifico";
-      font-size: 18px;
-    }
+  fieldset label, h3 {
+    font-family: "Pacifico";
+    font-size: 18px;
   }
 
   fieldset.download {
@@ -14,19 +12,27 @@ body.cart, body.orders {
   }
 
   a.delete {
-    position: relative;
-    left: 10px;
+    position: absolute;
+    top: -7px;
+    right: -15px;
+    font-size: 15px;
+    display: block;
     i {
+      padding: 2px;
+      /*opacity:0.6;*/
+      /*filter:alpha(opacity=60); [> For IE8 and earlier <]*/
       text-decoration: none;
-      color: #AAA;
+      color: #666;
       &:hover {
-        color: #E67F6C;
+        color: #CC5352;
+        opacity: 1;
+        filter:alpha(opacity=100); /* For IE8 and earlier */
       }
     }
   }
 
-  a#paypal-checkout img {
-    margin-top: 20px;
+  .well .well {
+    background-color: #AAAAAA;
   }
 
   .thumbnails {
@@ -34,10 +40,34 @@ body.cart, body.orders {
   }
 
   .thumbnail {
+    position: relative;
+    background-color: #FFF;
+    img { border: 1px solid #999 }
+    /*background-color: #222;*/
+    /*img { border: 1px solid #999 }*/
+    /*color: #AAA;*/
     // http://css3gen.com/box-shadow/
     -webkit-box-shadow: 4px 4px 5px rgba(50, 50, 50, 0.76);
     -moz-box-shadow:    4px 4px 5px rgba(50, 50, 50, 0.76);
     box-shadow:         4px 4px 5px rgba(50, 50, 50, 0.76);
+    height: 180px;
+    img {
+      max-height: 150px;
+      width: auto;
+      max-width: auto;
+      min-width: auto;
+    }
+    .caption {
+      position: absolute;
+      top: 160px;
+      left: 0;
+      width: 160px;
+      text-align: center;
+    }
+    a.thumb {
+      display: block;
+      width: 160px;
+      text-align: center;
+    }
   }
-
 }
