@@ -13,7 +13,6 @@ class Order < ActiveRecord::Base
 
       if order.save
         cart.destroy
-        Gallery::Jobs.zip_order << {order_id: order.id}
       end
     end
   end

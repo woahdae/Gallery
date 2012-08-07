@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120806184527) do
+ActiveRecord::Schema.define(:version => 20120807065505) do
 
   create_table "albums", :force => true do |t|
     t.string   "name"
@@ -40,10 +40,11 @@ ActiveRecord::Schema.define(:version => 20120806184527) do
   create_table "line_items", :force => true do |t|
     t.integer  "cart_id"
     t.integer  "photo_id"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
+    t.datetime "created_at",   :null => false
+    t.datetime "updated_at",   :null => false
     t.string   "size"
     t.integer  "order_id"
+    t.text     "download_url"
   end
 
   add_index "line_items", ["cart_id"], :name => "index_line_items_on_cart_id"
@@ -53,9 +54,8 @@ ActiveRecord::Schema.define(:version => 20120806184527) do
   create_table "orders", :force => true do |t|
     t.string   "uuid"
     t.integer  "user_id"
-    t.datetime "created_at",   :null => false
-    t.datetime "updated_at",   :null => false
-    t.string   "download_url"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
   end
 
   add_index "orders", ["user_id"], :name => "index_orders_on_user_id"

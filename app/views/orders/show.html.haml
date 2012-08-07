@@ -1,6 +1,21 @@
-.row
-  .well.span8.offset2.order
-    .well
+.well.order
+  %h1 Thanks for your order!
+
+  .row
+    .well.span7
+      %h3 Photos
+
+      %ul.thumbnails
+        - @order.line_items.each do |li|
+          %li.thumbnail.span2
+            = image_tag li.photo.image.url(:thumb)
+            .caption
+              %label #{li.size.capitalize} (#{number_to_currency(li.unit_price)})
+              = link_to li.download_url, :class => 'btn btn-primary' do
+                Download
+                %i.icon-download-alt
+
+    .span4
       %h3
         %i.icon-cart
         Details
@@ -11,45 +26,10 @@
         %tr
           %th Order Total
           %td= number_to_currency(@order.total)
+        %tr
+          %th Payment Status
+          %td Complete
 
-      .actions
-        = link_to 'Download photos', '#', id: 'download-link',
-          class: 'btn btn-primary disabled pull-left'
-
-        .spinner.pull-left
-          Generating download...
-
-      .clearfix
-
-    .well
-      %h3 Photos in this download
-
-      %ul.thumbnails
-        - @order.line_items.each do |li|
-          %li.thumbnail
-            = image_tag li.photo.image.url(:thumb)
-            .caption
-              Size: #{li.size}
-
-:javascript
-
-  $(function() {
-    var ajax_download_check = function() {
-      $.ajax("#{url_for(download_order_path(@order))}", {
-        dataType: 'json',
-        success: function(xhr_data) {
-          if (xhr_data.status == 'pending') {
-            setTimeout(function() { ajax_download_check() }, 5000); // wait 5 seconds than call ajax request again
-          } else if (xhr_data.status == 'expired') {
-            $('.spinner').addClass('hide');
-            $('#download-link').replaceWith("Download link has expired");
-          } else {
-            $('#download-link').removeClass('disabled');
-            $('#download-link').attr('href', xhr_data.url);
-            $('.spinner').addClass('hide');
-          }
-        }
-      });
-    };
-    ajax_download_check();
-  })
+      = link_to root_path, :class => 'btn btn-inverse' do
+        Continue Browsing
+        %i.icon-signin
