@@ -3,6 +3,7 @@ class Admin::AlbumsController < AdminController
   load_and_authorize_resource
   before_filter :redirect_to_new_if_no_albums, :only => :index
   before_filter :load_albums_unless_present
+  after_filter :expire_album_cache, :only => [:update, :delete_photo]
 
   def index
     redirect_to [:admin, @albums.first]
@@ -61,5 +62,9 @@ class Admin::AlbumsController < AdminController
 
   def redirect_to_new_if_no_albums
     redirect_to :action => :new if @albums.empty?
+  end
+
+  def expire_album_cache
+    expire_fragment(@album)
   end
 end
