@@ -25,12 +25,14 @@
         .logo.pull-left
           = link_to image_tag('logo.png'), root_path
         .socials.pull-right
-          %a{:href  => "https://www.facebook.com/katie.houck",
-            :target => '_blank'}
+          = link_to 'https://www.facebook.com/katie.houck',
+            target: '_blank', rel: 'tooltip-bottom',
+            title: 'Find me on Facebook' do
             %i.icon-facebook
-          / your facebook link
-          %a{:href => "mailto:katie.houck@yahoo.com"}
-            %i.icon-envelope
+          = mail_to 'katie.houck@yahoo.com',
+            '<i class="icon-envelope"></i>'.html_safe,
+            encode: 'javascript', rel: 'tooltip-bottom',
+            title: 'Send me an Email'
         #login.pull-right
           - if current_user
             Logged in as <br />

@@ -18,5 +18,6 @@
 //= require_directory .
 
 $(function() {
+  $('[rel*=tooltip-bottom]').tooltip({placement: 'bottom'});
   $('[rel*=tooltip]').tooltip();
 })
