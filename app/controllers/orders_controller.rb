@@ -1,6 +1,5 @@
 class OrdersController < ApplicationController
   before_filter :authenticate_user!
-  before_filter :load_orders
   load_and_authorize_resource
 
   def show
