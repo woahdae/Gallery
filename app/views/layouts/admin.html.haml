@@ -43,12 +43,13 @@
             %ul.nav.nav-pills.nav-stacked
               %li.user-container
                 %a{:href => "index.html"}
-                  %img{:src => "/assets/admin/100/07.png"}/
+                  %img{:src => "/assets/chicken.jpg"}/
                   = current_user.display_name
 
               %li
-                %a{:href => albums_path}
+                %a{:href => admin_albums_path}
                   %i.icon-large.icon-home
                   Albums
+
         / ** ./ left panel **
       .clearfix
