@@ -40,7 +40,7 @@ class Photo < ActiveRecord::Base
   def as_jq_upload
     { "name"          => image_file_name,
       "size"          => image.size,
-      "url"           => image.url,
+      "url"           => image.url(:large),
       "thumbnail_url" => image.url(:thumb),
       "delete_url"    => "/admin/albums/delete_photo?photo_id=#{id}",
       "delete_type"   => "DELETE" }

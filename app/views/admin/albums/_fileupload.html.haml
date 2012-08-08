@@ -28,27 +28,8 @@
 %br/
 / The table listing the files available for upload/download
 %table.table.table-striped{:role => "presentation"}
-  %tbody.files{"data-target" => "#modal-gallery", "data-toggle" => "modal-gallery"}
-  / modal-gallery is the modal dialog used for the image gallery
-  #modal-gallery.modal.modal-gallery.hide.fade{"data-filter" => ":odd"}
-    .modal-header
-      %a.close{"data-dismiss" => "modal"} &times;
-      %h3.modal-title
-    .modal-body
-      .modal-image
-    .modal-footer
-      %a.btn.modal-download{:target => "_blank"}
-        %i.icon-download
-        %span Download
-      %a.btn.btn-success.modal-play.modal-slideshow{"data-slideshow" => "5000"}
-        %i.icon-play.icon-white
-        %span Slideshow
-      %a.btn.btn-info.modal-prev
-        %i.icon-arrow-left.icon-white
-        %span Previous
-      %a.btn.btn-primary.modal-next
-        %span Next
-        %i.icon-arrow-right.icon-white
+  %tbody.files
+
   / The template to display files available for upload
   %script#template-upload{:type => "text/x-tmpl"}
     {% for (var i=0, file; file=o.files[i]; i++) { %}
