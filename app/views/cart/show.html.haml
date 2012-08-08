@@ -43,7 +43,7 @@
             %th Order Total
             %td= number_to_currency(@cart.total)
 
-        = link_to request.referrer || root_path,
+        = link_to root_path,
           :class => 'btn btn-inverse', id: 'browse' do
           Continue Browsing
           %i.icon-signin

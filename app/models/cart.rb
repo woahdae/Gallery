@@ -13,7 +13,7 @@ class Cart < ActiveRecord::Base
   end
 
   def remove(photo_id)
-    line_items.delete(LineItem.find_by_photo_id(photo_id))
+    line_items.find_by_photo_id(photo_id).delete
   end
 
   before_create :generate_uuid
