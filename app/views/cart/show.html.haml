@@ -37,6 +37,15 @@
             Note: you do not need a PayPal account to check out. Look for
             the 'pay as a guest' link if you do not wish to create one.
 
+        .well
+          All images purchased and downloaded from this site are subject to a
+          = link_to "Personal Use License", '#personal-use-licence',
+            data: {toggle: 'modal'}
+          \. For a
+          = link_to "Commercial Use Licence", '#commercial-use-licence',
+            data: {toggle: 'modal'}
+          and pricing, please #{contact_me}.
+
         %table.table
           %tr
             %th Order Total
@@ -54,3 +63,69 @@
           align="right" style="margin-right:7px;">
 
     .clearfix
+
+#personal-use-licence.hide.modal
+  .modal-header
+    %h3.strong Personal Use License
+
+  .modal-body
+    %p
+      This license is for personal use only. Personal use means non-commercial
+      use of the Media for display on personal websites and computers, or
+      making image prints or video copies for personal use. The Media may not
+      be used in any way whatsoever in which you charge money, collect fees, or
+      receive any form of remuneration. The Media may not be used in
+      advertising. The Media may not be resold, relicensed, or sub-licensed.
+
+    %ul
+      %li
+        Title and ownership, and all right now and in the future, of and for
+        the Media remain exclusively with the content provider.
+      %li
+        There are no warranties, express or implied. The media are provided 'as
+        is'.
+
+  .modal-footer
+    = link_to 'I understand', '#', data: {dismiss: 'modal'}, class: 'btn'
+
+#commercial-use-licence.hide.modal
+  .modal-header
+    %h3.strong Commercial Use Licence
+
+  .modal-body
+    %ul
+      %li
+        Photographer (“content provider”) grants you a perpetual, non-exclusive,
+        non-transferable, worldwide license to use the accompanying image(s), for
+        permitted commercial purpose, defined as:
+
+        %ul
+          %li Advertising, promotion, brochures, packing
+          %li As part of a commercial website for promotional purposes (maximum 800x600 pixels)
+          %li Prints, posters, flyers, for promotional uses only (not for resale)
+          %li Prints, posters, or other commercial display of media
+          %li Magazines, books, newspapers, other printed publications, 
+          %li Video, broadcast, theatrical
+
+    %h5.strong What you may not do:
+
+    %p
+      Buyer may not resell, relicense, redistribute, without express written
+      permission from content provider. Use as a derivative work, and reselling
+      or redistributing such as derivative work is prohibited. Media may not be
+      used in a pornographic, obscene, illegal, immoral, libelous, or
+      defamatory manner. Media may not be incorporated into trademarks, logos,
+      or service marks. Media may not be made available for download.
+
+    %p
+      Content provider retains all rights, license, copyright, title and
+      ownership of the Media.
+
+    %p
+      There is no warranty, express or implied, with the purchase of this
+      digital image file. Content provider will not be made liable for any
+      claims, or incidental, consequential or other damages arising out of this
+      license or buyers use of media.
+
+  .modal-footer
+    = link_to 'I understand', '#', data: {dismiss: 'modal'}, class: 'btn'

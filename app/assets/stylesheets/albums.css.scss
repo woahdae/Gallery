@@ -14,17 +14,11 @@ body.albums {
 
       .first:first-letter {
         font-size: 2em;
-        font-family: "Edwardian Script ITC", "Brush Script MT", cursive;
         padding-right: 2px;
       }
       .first:first-line { line-height: 1.5em; }
 
       p { line-height: 1.5em; }
-    }
-
-    .signature {
-      font-family: 'Pacifico';
-      font-size: 20px;
     }
 
   }

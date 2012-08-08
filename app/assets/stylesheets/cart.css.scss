@@ -1,9 +1,11 @@
 body.cart, body.orders {
 
-  fieldset label, h3 {
+  fieldset label, .well h3 {
     font-family: "Pacifico";
     font-size: 18px;
   }
+
+  .strong { font-weight: bold; }
 
   fieldset.download {
     li {
