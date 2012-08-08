@@ -34,7 +34,7 @@
             encode: 'javascript', rel: 'tooltip-bottom',
             title: 'Send me an Email'
         #login.pull-right
-          - if current_user
+          - if current_user && current_user.admin?
             Logged in as <br />
             = link_to current_user.display_name, current_user
         = render 'cart/cart'

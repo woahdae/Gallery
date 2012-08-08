@@ -9,10 +9,13 @@ class AlbumsController < ApplicationController
   end
 
   def index
-    if @recent_albums.any?
+    @carousel_photos = CarouselPhoto.scoped
+    if @carousel_photos.any?
+      render
+    elsif @recent_albums.first
       redirect_to @recent_albums.first
     else
-      render
+      render text: 'what do you want from me!?!'
     end
   end
 

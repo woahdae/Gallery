@@ -29,4 +29,8 @@ module ApplicationHelper
       orders_path
     end
   end
+
+  def contact_me
+    mail_to 'katie@khouck.com', 'contact me', encode: 'javascript'
+  end
 end

@@ -1,4 +1,34 @@
 body.albums {
+  &.index {
+
+    .carousel {
+      height: 550px;
+      .item img {
+        width: 670px;
+        max-width: none;
+      }
+    }
+
+    .lead {
+      font-size: 16px;
+
+      .first:first-letter {
+        font-size: 2em;
+        font-family: "Edwardian Script ITC", "Brush Script MT", cursive;
+        padding-right: 2px;
+      }
+      .first:first-line { line-height: 1.5em; }
+
+      p { line-height: 1.5em; }
+    }
+
+    .signature {
+      font-family: 'Pacifico';
+      font-size: 20px;
+    }
+
+  }
+
   // Mostly from the stock template
   .thumbnails .thumbnail {
     border: none;

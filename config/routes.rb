@@ -27,5 +27,9 @@ Gallery::Application.routes.draw do
         delete :delete_photo
       end
     end
+
+    resource :carousel, :only => [:show, :update], :controller => 'Carousel' do
+      collection { get :search }
+    end
   end
 end

@@ -1,1 +1,40 @@
 = render 'recent_albums'
+
+.row
+  .span5
+    .lead
+      %p.first
+        Welcome to khouck photography, where you can find photos of many local
+        cycling events!
+      %p
+        You can now purchase and download images from the site. I can
+        do prints as well, but for now you will need to #{contact_me} for those.
+      %p
+        You can follow me on
+        = link_to 'Facebook', 'http://www.facebook.com/khouckphoto'
+        to stay updated as I add more images and
+        events. Please feel free to contact me with any questions or feedback you
+        may have about my site.
+
+      %p Thank you!
+
+      %p Katie
+
+  .span7.pull-right
+    #index-carousel.carousel.slide
+      .carousel-inner
+        - @carousel_photos.each do |carousel_photo|
+          .item
+            = link_to album_path(carousel_photo.photo.album_id) do
+              = image_tag carousel_photo.photo.image(:large)
+
+      = link_to '&lsaquo;'.html_safe, '#index-carousel',
+        :class => "carousel-control left", 'data-slide' => "prev"
+      = link_to '&rsaquo;'.html_safe, '#index-carousel',
+        :class => "carousel-control right", 'data-slide' => "next"
+
+:javascript
+  $(function() {
+    $('.carousel .item:first').addClass('active');
+    $('.carousel').carousel({ });
+  })

@@ -63,3 +63,5 @@ gem 'rubyzip'
 gem 'aws-sdk'
 
 gem 'rest-client'
+
+gem 'acts_as_list'

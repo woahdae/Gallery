@@ -8,5 +8,6 @@ class AdminAbility
     can :manage, Photo do |photo|
       photo.album.user_id = user.id
     end
+    can :manage, CarouselPhoto, :user_id => user.id
   end
 end
