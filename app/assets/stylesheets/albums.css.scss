@@ -120,7 +120,7 @@ body.albums {
   }
 
   .cart-flash {
-    position: absolute;
+    position: fixed;
     z-index: 100000;
     width: 100%;
     text-align: center;
