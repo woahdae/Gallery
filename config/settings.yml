@@ -20,7 +20,7 @@ test:
   foo: bar
 
 production:
-  domain: 'khouck.com'
+  domain: 'www.khouck.com'
   paypal:
     email:     'katie@khouck.com'
     password:  ''
