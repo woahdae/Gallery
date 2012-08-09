@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120808034948) do
+ActiveRecord::Schema.define(:version => 20120809162722) do
 
   create_table "albums", :force => true do |t|
     t.string   "name"
@@ -61,8 +61,12 @@ ActiveRecord::Schema.define(:version => 20120808034948) do
   create_table "orders", :force => true do |t|
     t.string   "uuid"
     t.integer  "user_id"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
+    t.datetime "created_at",                                     :null => false
+    t.datetime "updated_at",                                     :null => false
+    t.string   "buyer_email"
+    t.integer  "line_items_count"
+    t.decimal  "total",            :precision => 8, :scale => 2
+    t.string   "payment_status"
   end
 
   add_index "orders", ["user_id"], :name => "index_orders_on_user_id"

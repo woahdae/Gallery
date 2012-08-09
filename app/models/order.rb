@@ -11,8 +11,7 @@ class Order < ActiveRecord::Base
   validates :user, presence: true
   validates :line_items, length: {minimum: 1}
 
-  # Allow nil just for testing purposes
-  delegate :payment_status, to: :paypal_receipt, :allow_nil => true
+  before_save :cache_order_details
 
   def self.transfer_cart(cart, user)
     new.tap do |order|
@@ -30,20 +29,16 @@ class Order < ActiveRecord::Base
     line_items.to_a.sum(&:unit_price)
   end
 
-  def to_zip
-    t = Tempfile.new([self.uuid, '.zip'])
-
-    Zip::ZipOutputStream.open(t.path) do |zip|
-      line_items.each do |li|
-        zip.put_next_entry(File.join(self.uuid, li.photo.image_file_name))
-        zip.print(li.download_object.read)
-      end
-    end
-
-    t
-  end
-
   def to_param
     "#{id}-#{uuid}"
+  end
+
+  private
+
+  def cache_order_details
+    self.line_items_count ||= line_items.count
+    self.payment_status   ||= paypal_receipt.try(:payment_status)
+    self.buyer_email      ||= user.email
+    self.total            ||= line_items.to_a.sum(&:unit_price)
   end
 end

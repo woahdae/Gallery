@@ -28,8 +28,6 @@ Gallery::Application.routes.draw do
       end
     end
 
-    resource :carousel, :only => [:show, :update], :controller => 'Carousel' do
-      collection { get :search }
-    end
+    resources :orders, :only => :index
   end
 end

@@ -1,0 +1,18 @@
+.span9.contentcolumn
+  .row-fluid
+    .span12
+      .well
+        .navbar.navbar-heading
+          .navbar-inner
+            .container{:style => "width: auto;"}
+              %a.brand{:href => "#"} Orders
+
+        %table#orders.table.table-striped.table-bordered{'data-source' => admin_orders_url(format: "json")}
+          %thead
+            %tr
+              %th Date
+              %th Email
+              %th # Photos
+              %th Total
+              %th Payment Status
+          %tbody

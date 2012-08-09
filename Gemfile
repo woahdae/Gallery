@@ -65,3 +65,6 @@ gem 'aws-sdk'
 gem 'rest-client'
 
 gem 'acts_as_list'
+
+gem 'jquery-datatables-rails'
+gem 'will_paginate'
