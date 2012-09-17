@@ -23,7 +23,7 @@ class AlbumsController < ApplicationController
 
   def load_recent_albums
     @recent_albums = Album.accessible_by(current_ability).
-                        order('id ASC').limit(5)
+                        order('id DESC').limit(5)
   end
 
   def load_cart
