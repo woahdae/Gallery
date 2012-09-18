@@ -19,7 +19,7 @@ private
   def data
     orders.map do |order|
       [
-        h(order.created_at.to_s(:short)),
+        h(order.created_at.to_s(:short_12)),
         mail_to(order.buyer_email),
         h(order.line_items.count),
         h(number_to_currency(order.total)),
