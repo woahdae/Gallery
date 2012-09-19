@@ -23,6 +23,7 @@ end
 
 group :production do
   gem 'newrelic_rpm'
+  gem 'thin' # so heroku doesn't use webrick
 end
 
 group :test do
