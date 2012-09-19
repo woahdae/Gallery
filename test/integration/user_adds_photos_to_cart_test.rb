@@ -14,9 +14,7 @@ class UserAddsPhotosToCartTest < IntegrationTest
 
     last_cart = Cart.last
 
-    within(css_id(photo1)) do
-      find('.btn.image-small').click
-    end
+    within(css_id(photo1)) { find('a.image-small').click }
 
     cart = Cart.last
     # sanity check
