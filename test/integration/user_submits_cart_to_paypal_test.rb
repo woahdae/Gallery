@@ -5,10 +5,8 @@ class UserSubmitsCartToPaypalTest < IntegrationTest
   let(:photo2) { Factory.create(:photo) }
   let(:photo3) { Factory.create(:photo) }
 
-  let(:cart)   {
-    # awkward way of getting the cart w/ correct session id
-    visit cart_path
-    Cart.last }
+  # awkward way of getting the cart w/ correct session id
+  let(:cart)   { visit cart_path; Cart.last }
 
   before do
     cart.add(photo1, :size => 'small')

@@ -47,8 +47,7 @@ class UserReturnsFromPaypalTest < IntegrationTest
   end
 
   it 'logs the user in to their account if not logged in', vcr: 'paypal_pdt' do
-    user = User.last
-    page.must have_content("Logged in as #{user.display_name}")
+    page.must have_content("Thanks for your order!")
   end
 
   it 'redirects the logged-in user to their newly created order',
