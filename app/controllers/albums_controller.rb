@@ -8,6 +8,10 @@ class AlbumsController < ApplicationController
   def show
   end
 
+  # will be cleared on app restart due to transient nature of
+  # in-memory cache; good enough for now
+  caches_action :index, layout: false
+
   def index
     @carousel_photos = CarouselPhoto.scoped
     if @carousel_photos.any?
