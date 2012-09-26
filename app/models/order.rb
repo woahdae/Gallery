@@ -15,9 +15,11 @@ class Order < ActiveRecord::Base
 
   def self.transfer_cart(cart, user)
     new.tap do |order|
-      order.uuid = cart.uuid
-      order.user = user
-      order.line_items = cart.line_items
+      order.uuid           = cart.uuid
+      order.user           = user
+      order.line_items     = cart.line_items
+      order.promo_discount = cart.promo_discount
+      order.total          = cart.total
 
       if order.save
         cart.destroy
@@ -39,6 +41,5 @@ class Order < ActiveRecord::Base
     self.line_items_count ||= line_items.count
     self.payment_status   ||= paypal_receipt.try(:payment_status)
     self.buyer_email      ||= user.email
-    self.total            ||= line_items.to_a.sum(&:unit_price)
   end
 end

@@ -15,6 +15,8 @@ class PaypalPayment
       :invoice  => cart.uuid
     }
 
+    values[:discount_amount_cart] = cart.promo_discount if cart.promo
+
     cart.line_items.each_with_index do |item, index|
       index = index + 1
       values.merge!({

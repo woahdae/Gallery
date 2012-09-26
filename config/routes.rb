@@ -7,7 +7,7 @@ Gallery::Application.routes.draw do
 
   resources :albums, :only => [:index, :show]
 
-  resource :cart, :controller => 'Cart', :only => :show do
+  resource :cart, :controller => 'Cart', :only => [:show, :update] do
     member do
       post :add
       delete :remove

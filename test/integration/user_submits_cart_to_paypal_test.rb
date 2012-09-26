@@ -21,5 +21,21 @@ class UserSubmitsCartToPaypalTest < IntegrationTest
     page.find('a#paypal-checkout')['href'].must_equal(
       PaypalPayment.new(cart, with: :size).checkout_url)
   end
+
+  it 'user submits a promo code' do
+    visit cart_path
+
+    promo = Factory.create(:promo, code: '123XYZ', fixed_discount: 1.0)
+    fill_in 'cart_promo_code', with: promo.code
+    click_button 'Apply'
+
+    cart.reload
+
+    page.find('.order-total').must_have_content(cart.total)
+
+    # TODO: add promo to paypal url
+    page.find('a#paypal-checkout')['href'].must_equal(
+      PaypalPayment.new(cart, with: :size).checkout_url)
+  end
 end
 

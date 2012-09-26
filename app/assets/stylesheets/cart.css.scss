@@ -1,8 +1,12 @@
 body.cart, body.orders {
 
-  fieldset label, .well h3 {
+  fieldset legend, .well h3 {
     font-family: "Pacifico";
     font-size: 18px;
+  }
+
+  form.edit_cart {
+    margin: 0;
   }
 
   .strong { font-weight: bold; }
@@ -10,6 +14,17 @@ body.cart, body.orders {
   fieldset.download {
     li {
       margin-top: 10px
+    }
+  }
+
+  a.browse {
+    i.icon-signin {
+      -moz-transform: scaleX(-1);
+      -o-transform: scaleX(-1);
+      -webkit-transform: scaleX(-1);
+      transform: scaleX(-1);
+      filter: FlipH;
+      -ms-filter: "FlipH";
     }
   }
 

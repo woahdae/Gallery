@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120809162722) do
+ActiveRecord::Schema.define(:version => 20120919065407) do
 
   create_table "albums", :force => true do |t|
     t.string   "name"
@@ -34,6 +34,7 @@ ActiveRecord::Schema.define(:version => 20120809162722) do
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
     t.string   "uuid"
+    t.integer  "promo_id"
   end
 
   add_index "carts", ["session_id"], :name => "index_carts_on_session_id"
@@ -67,6 +68,8 @@ ActiveRecord::Schema.define(:version => 20120809162722) do
     t.integer  "line_items_count"
     t.decimal  "total",            :precision => 8, :scale => 2
     t.string   "payment_status"
+    t.integer  "promo_id"
+    t.decimal  "promo_discount",   :precision => 8, :scale => 2
   end
 
   add_index "orders", ["user_id"], :name => "index_orders_on_user_id"
@@ -90,6 +93,17 @@ ActiveRecord::Schema.define(:version => 20120809162722) do
   end
 
   add_index "photos", ["album_id"], :name => "index_photos_on_alblum_id"
+
+  create_table "promos", :force => true do |t|
+    t.decimal  "fixed_discount",      :precision => 8, :scale => 2
+    t.integer  "percentage_discount"
+    t.string   "code"
+    t.date     "expires_on"
+    t.datetime "created_at",                                        :null => false
+    t.datetime "updated_at",                                        :null => false
+  end
+
+  add_index "promos", ["code"], :name => "index_promos_on_code"
 
   create_table "users", :force => true do |t|
     t.string   "email",                  :default => "", :null => false

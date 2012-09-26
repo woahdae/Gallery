@@ -21,6 +21,18 @@ class CartController < ApplicationController
   def show
   end
 
+  def update
+    if @cart.update_attributes(params[:cart])
+      respond_to do |format|
+        format.html { redirect_to cart_path }
+      end
+    else
+      respond_to do |format|
+        format.html { render action: 'show' }
+      end
+    end
+  end
+
   private
 
   def load_cart

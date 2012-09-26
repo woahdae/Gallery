@@ -26,7 +26,7 @@
                     #{li.size.capitalize} (#{number_to_currency(li.unit_price)})
 
       %fieldset.span4.download
-        %label Download
+        %legend Download
 
         %ul
           %li After purchasing, items will be available as a digital download.
@@ -46,15 +46,23 @@
             data: {toggle: 'modal'}
           and pricing, please #{contact_me}.
 
+        - if @cart.errors[:promo_code].any?
+          %p.alert.alert-error Promo code #{@cart.errors[:promo_code].join(', ')}
+
+        = link_to 'Have a promo code?', '#promo-code', data: {toggle: 'modal'}
+
         %table.table
+          - if @cart.promo_id.present?
+            %tr
+              %th Promo #{@cart.promo.code}
+              %td #{number_to_currency(@cart.promo_discount)} off
           %tr
             %th Order Total
-            %td= number_to_currency(@cart.total)
+            %td.order-total= number_to_currency(@cart.total)
 
-        = link_to root_path,
-          :class => 'btn btn-inverse', id: 'browse' do
-          Continue Browsing
+        = link_to root_path, class: 'browse' do
           %i.icon-signin
+          Continue Browsing
 
         = link_to PaypalPayment.new(@cart, with: :size).checkout_url,
           id: 'paypal-checkout' do
@@ -63,6 +71,16 @@
           align="right" style="margin-right:7px;">
 
     .clearfix
+
+#promo-code.hide.modal
+  = form_for @cart, url: cart_path do |cart_f|
+    .modal-body
+      = cart_f.label :promo_code, "Promotional Code"
+      = cart_f.text_field :promo_code, class: 'pull-left'
+
+    .modal-footer
+      = link_to 'Cancel', '#', data: {dismiss: 'modal'}, class: 'btn'
+      = submit_tag 'Apply', class: 'btn btn-primary'
 
 #personal-use-licence.hide.modal
   .modal-header
