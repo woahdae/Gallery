@@ -7,7 +7,7 @@
 - cache(@album) do
 
   %ul#thumbnails.thumbnails
-    - @album.photos.each do |photo|
+    - @album.photos.order(:image_file_name).each do |photo|
       %li.span2.thumbnail[photo]
         = link_to "##{dom_id(photo)}-large", :class => 'photo-link inline' do
           = image_tag photo.image.url(:medium)
