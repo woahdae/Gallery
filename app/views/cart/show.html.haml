@@ -25,6 +25,9 @@
                   .caption
                     #{li.size.capitalize} (#{number_to_currency(li.unit_price)})
 
+          :javascript
+            $('html').on('contextmenu', 'img', function() { return false; });
+
       %fieldset.span4.download
         %legend Download
 
@@ -147,3 +150,4 @@
 
   .modal-footer
     = link_to 'I understand', '#', data: {dismiss: 'modal'}, class: 'btn'
+
