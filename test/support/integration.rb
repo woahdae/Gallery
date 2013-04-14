@@ -42,4 +42,12 @@ class IntegrationTest < MiniTest::Spec
   def running_js?
     Capybara.current_driver == Capybara.javascript_driver
   end
+
+  def drag_and_drop(from, to, options = {})
+    page.driver.browser.action.
+      click_and_hold(from.native).
+      move_to(to.native, options[:right], options[:down]).
+      release(from.native).
+      perform
+  end
 end

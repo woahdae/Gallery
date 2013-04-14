@@ -16,4 +16,5 @@
 //= require jquery-fileupload
 //= require dataTables/jquery.dataTables
 //= require dataTables/jquery.dataTables.bootstrap
+//= require jquery-ui-1.10.2.custom.js
 //= require_directory .

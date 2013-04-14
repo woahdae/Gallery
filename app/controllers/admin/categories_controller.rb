@@ -38,6 +38,13 @@ class Admin::CategoriesController < AdminController
     end
   end
 
+  def sort
+    @category.update_attributes(params[:category])
+    respond_to do |format|
+      format.js
+    end
+  end
+
   # too lazy to make a controller just for this
   def delete_photo
     photo = Photo.find(params[:photo_id])

@@ -41,4 +41,15 @@ class AdminManagesCategories < IntegrationTest
     crashes.name.must_equal('Crashes Gallore!')
     crashes.parent.must_equal(year_2013)
   end
+
+  it 'can drag and drop categories', js: true do
+    from = find(css_id(veggies)).find('a')
+    to   = find(css_id(cycling))
+
+    # drop to the right and down to make it a subcategory
+    drag_and_drop(from, to, right: 30, down: 20)
+
+    sleep(1)
+    veggies.reload.parent.must_equal(cycling)
+  end
 end
