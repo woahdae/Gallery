@@ -11,16 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120919065407) do
-
-  create_table "albums", :force => true do |t|
-    t.string   "name"
-    t.integer  "user_id"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
-  end
-
-  add_index "albums", ["user_id"], :name => "index_alblums_on_user_id"
+ActiveRecord::Schema.define(:version => 20130414065310) do
 
   create_table "carousel_photos", :force => true do |t|
     t.integer  "photo_id"
@@ -39,6 +30,17 @@ ActiveRecord::Schema.define(:version => 20120919065407) do
 
   add_index "carts", ["session_id"], :name => "index_carts_on_session_id"
   add_index "carts", ["uuid"], :name => "index_carts_on_uuid"
+
+  create_table "categories", :force => true do |t|
+    t.string   "name"
+    t.integer  "user_id"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+    t.string   "ancestry"
+  end
+
+  add_index "categories", ["ancestry"], :name => "index_categories_on_ancestry"
+  add_index "categories", ["user_id"], :name => "index_alblums_on_user_id"
 
   create_table "girl_friday_messages", :force => true do |t|
     t.string "queue_name"
@@ -83,7 +85,7 @@ ActiveRecord::Schema.define(:version => 20120919065407) do
   end
 
   create_table "photos", :force => true do |t|
-    t.integer  "album_id"
+    t.integer  "category_id"
     t.datetime "created_at",         :null => false
     t.datetime "updated_at",         :null => false
     t.string   "image_file_name"
@@ -92,7 +94,7 @@ ActiveRecord::Schema.define(:version => 20120919065407) do
     t.datetime "image_updated_at"
   end
 
-  add_index "photos", ["album_id"], :name => "index_photos_on_alblum_id"
+  add_index "photos", ["category_id"], :name => "index_photos_on_category_id"
 
   create_table "promos", :force => true do |t|
     t.decimal  "fixed_discount",      :precision => 8, :scale => 2
