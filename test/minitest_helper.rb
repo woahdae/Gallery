@@ -38,6 +38,10 @@ class MiniTest::Spec
     end
 
     DatabaseCleaner.clean_with(:truncation)
+
+    if metadata[:js]
+      Capybara.current_driver = Capybara.javascript_driver
+    end
   end
 
   after do
