@@ -22,3 +22,4 @@ config/settings.yml.local
 app/assets/images/icons-*.png
 coverage
 public/system
+.env
