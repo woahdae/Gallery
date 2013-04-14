@@ -69,3 +69,5 @@ gem 'jquery-datatables-rails'
 gem 'will_paginate'
 
 gem 'date_validator'
+
+gem 'ancestry'
