@@ -11,7 +11,10 @@
  *= require_self
  *= require font-awesome
  *= require photographer
- *= require_directory .
+ *= require albums
+ *= require cart
+ *= require colorbox
+ *= require orders
  */
 
 @import 'bootstrap';
@@ -59,5 +62,15 @@
 
 #login {
   color: #BBB;
-  margin: 10px;
+
+  .dropdown-toggle .icon-chevron-down {
+    color: #999;
+    text-decoration: none;
+  }
+
+  &.logged-out {
+    margin-top: 10px;
+  }
 }
+
+

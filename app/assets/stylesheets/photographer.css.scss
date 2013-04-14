@@ -1,8 +1,9 @@
-/* General Styles */
+/* Styles from the purchased wrapboostrap theme */
 
 body {
   background: url(/assets/bg.jpg);
-  padding-top: 100px; }
+  margin-top: 80px;
+}
 
 p {
   line-height: 1.8; }
@@ -21,7 +22,7 @@ h1, h2, h3, h4, h5, h6 {
 
 /* Masthead */
 
-.logo {
+.navbar .logo {
   margin: 20px 0;
   color: #EEE;
   text-align: center;
@@ -31,6 +32,7 @@ h1, h2, h3, h4, h5, h6 {
   font-family: "Pacifico";
   text-shadow: 0px 1px 1px #000;
   margin: 10px 0;
+  padding: 0;
   span {
     font-weight: 400;
     color: #AAA;
@@ -40,12 +42,9 @@ h1, h2, h3, h4, h5, h6 {
 
 .masthead {
   background: url(/assets/headerbg.jpg);
-  position: fixed;
-  top: 0;
-  left: 0;
   z-index: 10;
-  width: 100%;
-  box-shadow: 0 1px 8px black; }
+  box-shadow: 0 1px 8px black;
+}
 
 /* Thumbnails */
 
@@ -54,7 +53,7 @@ h1, h2, h3, h4, h5, h6 {
 
 /* Socials */
 
-.socials a {
+.navbar .nav .socials a {
   float: left;
   display: block;
   background: #FFF;

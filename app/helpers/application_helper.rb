@@ -1,4 +1,10 @@
 module ApplicationHelper
+  BOOTSTRAP_ERRORS = {
+    'notice'  => 'alert-success',
+    'warning' => '',
+    'error'   => 'alert-error',
+  }.with_indifferent_access
+
   def page_title
     front = @album.try(:name)
     front ||= controller_name.match(/cart/) ? 'Your Cart' : nil
@@ -9,7 +15,8 @@ module ApplicationHelper
   def error_notice
     errors = []
     flash.to_hash.each_pair do |type, message|
-      errors << content_tag(:div, message, :class => type)
+      errors << content_tag(:div, message,
+                            :class => "alert #{BOOTSTRAP_ERRORS[type]}")
     end
     safe_join(errors)
   end
