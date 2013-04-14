@@ -1,4 +1,4 @@
-class Album < ActiveRecord::Base
+class Category < ActiveRecord::Base
   attr_accessible :name, :photos_attributes
 
   belongs_to :user, :inverse_of => :albums
