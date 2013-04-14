@@ -1,0 +1,4 @@
+%li{:class => active_category(category, :current => @category)}[category]
+  %a{:href => url_for([:admin, category])}
+    %i.icon-large.icon-th-large
+    = category.name

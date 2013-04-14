@@ -31,6 +31,8 @@ group :test do
   gem 'minitest-capybara'
   gem 'minitest-metadata'
   gem 'minitest-matchers'
+  gem 'miniskirt'
+  gem 'selenium-webdriver'
   gem 'turn'
   gem 'sqlite3'
   gem 'vcr'
@@ -71,3 +73,5 @@ gem 'will_paginate'
 gem 'date_validator'
 
 gem 'ancestry'
+
+gem 'friendly_id'

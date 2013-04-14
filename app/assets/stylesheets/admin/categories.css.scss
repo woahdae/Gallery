@@ -1,3 +1,16 @@
 body.categories {
   .preview img, .preview canvas { height: 50px; }
+
+  .nested_categories {
+    margin-left: 30px;
+  }
+
+  #categories {
+    ul { min-height:10px; }
+
+    .ui-state-highlight {
+      background-color: #FFF59B;
+      border: 1px solid #FFE651;
+    }
+  }
 }

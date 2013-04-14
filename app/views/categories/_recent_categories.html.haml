@@ -1,5 +1,14 @@
 .clearfix
-  %ul.filter-nav
-    - @recent_categories.each do |category|
-      %li{:class => active_category(category, :current => @category)}
-        = link_to category.name, category
+  .row
+    .span10
+      %ul.filter-nav
+        - @recent_categories.each do |category|
+          %li{:class => active_category(category, :current => @category)}
+            = link_to category.name, category
+
+    .span2{style: 'text-align: right'}
+      %ul.filter-nav
+        - Category.where(name: [Date.today.year.to_s, 1.year.ago.year.to_s]).find_each do |category|
+          %li{:class => active_category(category, current: @category,
+            include_ancestry: true)}
+            = link_to category.name, category

@@ -6,7 +6,7 @@ class Admin::CategoriesController < AdminController
   after_filter :expire_category_cache, :only => [:update, :delete_photo]
 
   def index
-    redirect_to [:admin, @categories.first]
+    redirect_to [:admin, @categories.last]
   end
 
   def show

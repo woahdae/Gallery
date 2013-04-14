@@ -1,6 +1,6 @@
 = render 'category_list'
 
-.span9.contentcolumn
+.span8.contentcolumn
   .row-fluid
     .span12
       .well
@@ -10,6 +10,7 @@
               %a.brand{:href => "#"} New Category
         = simple_form_for [:admin, @category] do |f|
           = f.input :name
+          = f.input :parent_id, collection: @categories.without_photos
 
           .actions
             = f.submit 'Create Category', :class => 'btn btn_primary'

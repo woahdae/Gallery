@@ -1,16 +1,14 @@
-.span3.leftsidebar
+.span4.leftsidebar
   .menusb.well
     .navbar.navbar-heading
       .navbar-inner
         %a.brand{:href => "#"} Categories
-    %ul.nav.nav-tabs.nav-stacked
-      - @categories.each do |category|
-        %li{:class => active_category(category, :current => @category)}
-          %a{:href => url_for([:admin, category])}
+    #categories
+      %ul.nav.nav-tabs.nav-stacked
+        = nested_categories @categories.arrange(:order => 'created_at DESC')
+
+        %li.hr
+        %li{:class => active_category(@category)}
+          %a{:href => new_admin_category_path}
             %i.icon-large.icon-th-large
-            = category.name
-      %li.hr
-      %li{:class => active_category(@category)}
-        %a{:href => new_admin_category_path}
-          %i.icon-large.icon-th-large
-          New Category
+            New Category

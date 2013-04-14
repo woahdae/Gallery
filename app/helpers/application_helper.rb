@@ -26,6 +26,10 @@ module ApplicationHelper
       'active'
     elsif category.try(:id) == options[:current].try(:id)
       'active'
+    elsif options[:include_ancestry] &&
+          options[:current].try(:ancestry).to_s.split('/').
+            include?(category.id.try(:to_s))
+      'active'
     end
   end
 
@@ -39,5 +43,15 @@ module ApplicationHelper
 
   def contact_me
     mail_to 'katie@khouck.com', 'contact me', encode: 'javascript'
+  end
+
+  def category_path(*args)
+    if args.first.is_a?(Category)
+      "/#{args.first.ancestors.map(&:slug).join('/')}/#{args.first.slug}"
+    elsif args.first.is_a?(Integer)
+      category_path(Category.find(args.first), *args[1..-1])
+    else
+      super
+    end
   end
 end

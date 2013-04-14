@@ -24,10 +24,17 @@ Gallery::Application.routes.draw do
     root :to => 'categories#index'
     resources :categories do
       collection do
+        post :sort
         delete :delete_photo
       end
     end
 
     resources :orders, :only => :index
   end
+
+  match '/:a/:b/:c/:d/:id' => "categories#show"
+  match '/:a/:b/:c/:id'    => "categories#show"
+  match '/:a/:b/:id'       => "categories#show"
+  match '/:a/:id'          => "categories#show"
+  match '/:id'             => "categories#show"
 end

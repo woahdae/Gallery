@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130414065310) do
+ActiveRecord::Schema.define(:version => 20130414180441) do
 
   create_table "carousel_photos", :force => true do |t|
     t.integer  "photo_id"
@@ -37,9 +37,11 @@ ActiveRecord::Schema.define(:version => 20130414065310) do
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
     t.string   "ancestry"
+    t.string   "slug"
   end
 
   add_index "categories", ["ancestry"], :name => "index_categories_on_ancestry"
+  add_index "categories", ["slug"], :name => "index_categories_on_slug"
   add_index "categories", ["user_id"], :name => "index_alblums_on_user_id"
 
   create_table "girl_friday_messages", :force => true do |t|

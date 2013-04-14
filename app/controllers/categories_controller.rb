@@ -26,8 +26,8 @@ class CategoriesController < ApplicationController
   private
 
   def load_recent_categories
-    @recent_categories = Category.accessible_by(current_ability).
-                        order('id DESC').limit(5)
+    @recent_categories = Category.having_photos.accessible_by(current_ability).
+      after_date(Date.today.beginning_of_year).order('id DESC').limit(5)
   end
 
   def load_cart

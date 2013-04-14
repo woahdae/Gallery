@@ -1,3 +1,5 @@
+@import 'bootstrap/mixins';
+
 body.categories {
   &.index {
 
@@ -21,6 +23,33 @@ body.categories {
       p { line-height: 1.5em; }
     }
 
+  }
+
+  .category-image {
+    position: relative;
+    @include box-shadow(4px 4px 5px rgba(50, 50, 50, 0.76));
+    text-align: center;
+    background-color: rgba(0, 0, 0, .30);
+
+    .category-name, .category-name-shadow {
+      position: absolute;
+      height: 40px;
+      bottom: 0;
+    }
+
+    .category-name-shadow {
+      background-color: #000;
+      @include opacity(0.5);
+      width: 100%;
+    }
+
+    .category-name {
+      font-size: 20px;
+      color: white;
+      width: 100%;
+      bottom: -10px;
+      left: 10px;
+    }
   }
 
   // Mostly from the stock template
