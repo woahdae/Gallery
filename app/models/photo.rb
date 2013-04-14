@@ -1,8 +1,8 @@
 require Rails.root + 'lib/watermark_processor'
 
 class Photo < ActiveRecord::Base
-  belongs_to :album, :inverse_of => :photos
-  has_one :user, :through => :album
+  belongs_to :category, :inverse_of => :photos
+  has_one :user, :through => :category
 
   attr_accessible :image
   has_attached_file :image,
@@ -42,7 +42,7 @@ class Photo < ActiveRecord::Base
       "size"          => image.size,
       "url"           => image.url(:large),
       "thumbnail_url" => image.url(:thumb),
-      "delete_url"    => "/admin/albums/delete_photo?photo_id=#{id}",
+      "delete_url"    => "/admin/categories/delete_photo?photo_id=#{id}",
       "delete_type"   => "DELETE" }
   end
 end

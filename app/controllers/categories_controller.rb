@@ -1,5 +1,5 @@
-class AlbumsController < ApplicationController
-  before_filter :load_recent_albums
+class CategoriesController < ApplicationController
+  before_filter :load_recent_categories
   load_and_authorize_resource
   skip_load_and_authorize_resource :only => :index
 
@@ -16,8 +16,8 @@ class AlbumsController < ApplicationController
     @carousel_photos = CarouselPhoto.scoped
     if @carousel_photos.any?
       render
-    elsif @recent_albums.first
-      redirect_to @recent_albums.first
+    elsif @recent_categories.first
+      redirect_to @recent_categories.first
     else
       render text: 'what do you want from me!?!'
     end
@@ -25,8 +25,8 @@ class AlbumsController < ApplicationController
 
   private
 
-  def load_recent_albums
-    @recent_albums = Album.accessible_by(current_ability).
+  def load_recent_categories
+    @recent_categories = Category.accessible_by(current_ability).
                         order('id DESC').limit(5)
   end
 

@@ -3,9 +3,9 @@ Gallery::Application.routes.draw do
 
   devise_for :users
 
-  root :to => 'albums#index'
+  root :to => 'categories#index'
 
-  resources :albums, :only => [:index, :show]
+  resources :categories, :only => [:index, :show]
 
   resource :cart, :controller => 'Cart', :only => [:show, :update] do
     member do
@@ -21,8 +21,8 @@ Gallery::Application.routes.draw do
   end
 
   namespace :admin do
-    root :to => 'albums#index'
-    resources :albums do
+    root :to => 'categories#index'
+    resources :categories do
       collection do
         delete :delete_photo
       end

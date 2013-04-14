@@ -1,4 +1,4 @@
-= render 'recent_albums'
+= render 'recent_categories'
 
 .row
   .span5
@@ -25,7 +25,7 @@
       .carousel-inner
         - @carousel_photos.each do |carousel_photo|
           .item
-            = link_to album_path(carousel_photo.photo.album_id) do
+            = link_to category_path(carousel_photo.photo.category_id) do
               = image_tag carousel_photo.photo.image(:large)
 
       = link_to '&lsaquo;'.html_safe, '#index-carousel',

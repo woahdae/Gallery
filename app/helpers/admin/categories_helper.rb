@@ -1,2 +1,2 @@
-module Admin::AlbumsHelper
+module Admin::CategoriesHelper
 end

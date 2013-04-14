@@ -1,5 +1,5 @@
 $(function() {
-  if (!$('body').hasClass('albums')) return;
+  if (!$('body').hasClass('categories')) return;
 
   $('li.thumbnail').colorbox({
     rel: 'thumbnail',

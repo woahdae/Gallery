@@ -6,7 +6,7 @@ module ApplicationHelper
   }.with_indifferent_access
 
   def page_title
-    front = @album.try(:name)
+    front = @category.try(:name)
     front ||= controller_name.match(/cart/) ? 'Your Cart' : nil
 
     [front, 'KHouck.com'].compact.join(' | ')
@@ -21,17 +21,17 @@ module ApplicationHelper
     safe_join(errors)
   end
 
-  def active_album(album, options = {})
-    if album.try(:new_record?) && action_name == 'new'
+  def active_category(category, options = {})
+    if category.try(:new_record?) && action_name == 'new'
       'active'
-    elsif album.try(:id) == options[:current].try(:id)
+    elsif category.try(:id) == options[:current].try(:id)
       'active'
     end
   end
 
   def user_path(user)
     if user.admin?
-      admin_albums_path
+      admin_categories_path
     else
       orders_path
     end

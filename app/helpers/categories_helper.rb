@@ -1,2 +1,2 @@
-module AlbumsHelper
+module CategoriesHelper
 end

@@ -1,10 +1,10 @@
 require_relative '../minitest_helper'
 
-describe Album do
+describe Category do
   describe 'validation' do
-    subject { Factory.build(:album) }
+    subject { Factory.build(:category) }
 
-    it 'passes given a valid album' do
+    it 'passes given a valid category' do
       subject.must_be(:valid?)
     end
 

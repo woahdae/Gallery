@@ -1,39 +1,39 @@
 require 'ostruct'
-class Admin::AlbumsController < AdminController
+class Admin::CategoriesController < AdminController
   load_and_authorize_resource
-  before_filter :redirect_to_new_if_no_albums, :only => :index
-  before_filter :load_albums_unless_present
-  after_filter :expire_album_cache, :only => [:update, :delete_photo]
+  before_filter :redirect_to_new_if_no_categories, :only => :index
+  before_filter :load_categories_unless_present
+  after_filter :expire_category_cache, :only => [:update, :delete_photo]
 
   def index
-    redirect_to [:admin, @albums.first]
+    redirect_to [:admin, @categories.first]
   end
 
   def show
     respond_to do |format|
       format.html # just render
-      format.json { render json: @album.photos.map(&:as_jq_upload).to_json}
+      format.json { render json: @category.photos.map(&:as_jq_upload).to_json}
     end
   end
 
   def create
-    if @album.save
-      redirect_to [:admin, @album]
+    if @category.save
+      redirect_to [:admin, @category]
     else
       render :action => :new
     end
   end
 
   def update
-    if @album.update_attributes(params[:album])
+    if @category.update_attributes(params[:category])
       respond_to do |format|
-        format.html { redirect_to [:admin, @album] }
-        format.json { render json: @album.photos.map(&:as_jq_upload).to_json}
+        format.html { redirect_to [:admin, @category] }
+        format.json { render json: @category.photos.map(&:as_jq_upload).to_json}
       end
     else
       respond_to do |format|
         format.html { render :action => :show }
-        format.json { render :json => [{error: @album.errors.full_messages}]}
+        format.json { render :json => [{error: @category.errors.full_messages}]}
       end
     end
   end
@@ -47,24 +47,24 @@ class Admin::AlbumsController < AdminController
     end
 
     respond_to do |format|
-      format.html { redirect_to [:admin, photo.album] }
+      format.html { redirect_to [:admin, photo.category] }
       format.json { render json: photo.as_jq_upload.to_json }
     end
   end
 
   private
 
-  def load_albums_unless_present
+  def load_categories_unless_present
     unless request.xhr?
-      @albums ||= Album.accessible_by(current_ability)
+      @categories ||= Category.accessible_by(current_ability)
     end
   end
 
-  def redirect_to_new_if_no_albums
-    redirect_to :action => :new if @albums.empty?
+  def redirect_to_new_if_no_categories
+    redirect_to :action => :new if @categories.empty?
   end
 
-  def expire_album_cache
-    expire_fragment(@album)
+  def expire_category_cache
+    expire_fragment(@category)
   end
 end

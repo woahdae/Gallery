@@ -2,15 +2,15 @@
   .menusb.well
     .navbar.navbar-heading
       .navbar-inner
-        %a.brand{:href => "#"} Albums
+        %a.brand{:href => "#"} Categories
     %ul.nav.nav-tabs.nav-stacked
-      - @albums.each do |album|
-        %li{:class => active_album(album, :current => @album)}
-          %a{:href => url_for([:admin, album])}
+      - @categories.each do |category|
+        %li{:class => active_category(category, :current => @category)}
+          %a{:href => url_for([:admin, category])}
             %i.icon-large.icon-th-large
-            = album.name
+            = category.name
       %li.hr
-      %li{:class => active_album(@album)}
-        %a{:href => new_admin_album_path}
+      %li{:class => active_category(@category)}
+        %a{:href => new_admin_category_path}
           %i.icon-large.icon-th-large
-          New Album
+          New Category

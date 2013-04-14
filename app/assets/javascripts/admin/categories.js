@@ -1,5 +1,5 @@
 $(function () {
-  if (!$('body').hasClass('albums')) return;
+  if (!$('body').hasClass('categories')) return;
 
   // Initialize the jQuery File Upload widget:
   $('#fileupload').fileupload({sequentialUploads: true});

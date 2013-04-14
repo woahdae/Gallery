@@ -1,8 +1,8 @@
 class Category < ActiveRecord::Base
   attr_accessible :name, :photos_attributes
 
-  belongs_to :user, :inverse_of => :albums
-  has_many :photos, :inverse_of => :album,
+  belongs_to :user, :inverse_of => :categories
+  has_many :photos, :inverse_of => :category,
     :dependent => :destroy
 
   accepts_nested_attributes_for :photos
@@ -16,7 +16,7 @@ class Category < ActiveRecord::Base
   def photos_attributes=(photos_attributes)
     self.photos += photos_attributes['images'].map do |image|
       photo = Photo.new(image: image)
-      photo.album_id = self.id
+      photo.category_id = self.id
       photo
     end
   end

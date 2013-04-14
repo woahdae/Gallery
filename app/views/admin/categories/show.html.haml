@@ -1,4 +1,4 @@
-= render 'album_list'
+= render 'category_list'
 
 .span9.contentcolumn
   .row-fluid
@@ -7,9 +7,9 @@
         .navbar.navbar-heading
           .navbar-inner
             .container{:style => "width: auto;"}
-              %a.brand{:href => "#"}= @album.name
+              %a.brand{:href => "#"}= @category.name
 
-        = simple_form_for [:admin, @album],
+        = simple_form_for [:admin, @category],
           :html => {:multipart => true, :id => 'fileupload'} do |f|
 
           = render :partial => 'fileupload', :locals => {:f => f}
