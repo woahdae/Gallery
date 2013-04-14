@@ -8,7 +8,7 @@
 
     .span2{style: 'text-align: right'}
       %ul.filter-nav
-        - Category.where(name: [Date.today.year.to_s, 1.year.ago.year.to_s]).find_each do |category|
+        - Category.where(name: [Date.today.year.to_s, 1.year.ago.year.to_s]).order('name DESC').all.each do |category|
           %li{:class => active_category(category, current: @category,
             include_ancestry: true)}
             = link_to category.name, category
